@@ -3,7 +3,8 @@ import GitHub from "./icons/GitHub.astro";
 import LinkedIn from "./icons/LinkedIn.astro";
 import Twitter from "./icons/Twitter.astro";
 
-const SocialLinks = [
+
+const SOCIAL_LINKS= [
   {
     name: 'LinkedIn',
     url: 'https://www.linkedin.com/in/lucascodev',
@@ -38,7 +39,7 @@ const IconComponents = {
     </a>
     <div class="flex items-center space-x-4">
       {
-        SocialLinks.map(({ name, url, icon }) => {
+        SOCIAL_LINKS.map(({ name, url, icon }) => {
           const IconComponent = IconComponents[icon];
           return (
             <a
