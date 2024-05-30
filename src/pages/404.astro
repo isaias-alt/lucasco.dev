@@ -1,0 +1,31 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ArrowLeft from "../components/icons/ArrowLeft.astro";
+---
+
+<Layout title='404 Page not found'>
+	<main class="flex flex-col items-center justify-center max-w-4xl mx-auto p-8">
+    <h1 class="font-bold text-4xl py-8">
+      404 but...
+    </h1>
+    <img src="/images/this-is-fine-404.gif" alt="this is fine dog">
+    <h1 class="opacity-50 text-2xl py-8">
+      This page is under construction
+    </h1>
+    <a
+      href="/"
+      class="group flex items-center space-x-2 font-medium duration-100 hover:text-black dark:hover:text-white"
+    >
+      <span 
+        class="opacity-60 duration-200 group-hover:translate-x-[2px] group-hover:opacity-100"
+      >
+        <ArrowLeft />
+      </span>
+      <span 
+        class="opacity-70 decoration-neutral-200 decoration-dotted underline-offset-[5px] hover:underline duration-200 group-hover:translate-x-[1px] group-hover:opacity-100"
+      >
+        Go back
+      </span>
+    </a>
+	</main>
+</Layout>

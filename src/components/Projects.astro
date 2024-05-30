@@ -5,7 +5,7 @@ import ArrowRightUp from "./icons/ArrowRightUp.astro"
 import ArrowRight from "./icons/ArrowRight.astro"
 ---
 
-<section class="pt-8">
+<section class="pt-14">
   <div class="flex w-full items-center justify-between">
     <h2 class="text-xl font-medium">Projects</h2>
     <a
@@ -25,7 +25,10 @@ import ArrowRight from "./icons/ArrowRight.astro"
     </a>
   </div>
 
-  <div class="grid gap-8 mt-8 sm:grid-cols-2 lg:grid-cols-2">
+  <div 
+    role="contentinfo"
+    class="grid gap-8 mt-8 sm:grid-cols-2 lg:grid-cols-2"
+  >
     {
       PROJECTS.map(({ title, description, tags, url, githubUrl, image }) => (
         <article 
@@ -57,7 +60,9 @@ import ArrowRight from "./icons/ArrowRight.astro"
 
           <div class="flex flex-wrap mt-2 space-x-2">
             {tags.map((tag) => (
-              <span class={`flex gap-x-2 rounded-full text-xs py-1 px-2`}>
+              <span 
+                class="text-xs py-1 px-2 cursor-default rounded-md border border-neutral-300 bg-neutral-200/50 font-mono font-medium text-neutral-600 dark:border-neutral-800 dark:bg-neutral-800/60 dark:text-neutral-300"
+              >
                 {tag}
               </span>
             ))}
