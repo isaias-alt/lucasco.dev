@@ -1,7 +1,13 @@
 import GitHub from "@/components/icons/GitHub";
 import LinkedIn from "@/components/icons/LinkedIn";
 import Twitter from "@/components/icons/Twitter";
-import { SocialLink } from "@/types/types";
+import { ComponentType } from "react";
+
+interface SocialLink {
+  name: string
+  url: string
+  icon: ComponentType
+}
 
 export const SOCIALS: SocialLink[] = [
   {

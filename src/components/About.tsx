@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 const About = () => {
   return (
     <article className="pt-8 opacity-80">
