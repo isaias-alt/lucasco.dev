@@ -10,12 +10,11 @@ interface Projects {
 
 export const PROJECTS: Projects[] = [
   {
-    title: 'Link.ucsi',
-    description: 'Est consectetur pariatur cillum voluptate. Est elit tempor Lorem proident elit consectetur magna mollit occaecat esse minim consectetur.',
-    tags: ['Next.js', 'TailwindCSS', 'MongoDB'],
-    url: 'https://github.com/isaias-alt',
-    projectIcon: '[UC]',
-    githubUrl: 'https://github.com/isaias-alt',
-    image: '/projects/wikicinema.webp'
+    title: 'Code Quizz',
+    description: 'Code Quizz is an interactive web application that allows users to answer code-related questions in various programming languages.',
+    tags: ['ReactJS', 'MUI', 'Zustand'],
+    url: 'https://code-quizz.vercel.app/',
+    githubUrl: 'https://github.com/isaias-alt/code-quizz',
+    image: '/projects/codequizz.webp'
   },
 ]

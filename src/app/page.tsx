@@ -9,7 +9,7 @@ export default function Home() {
     <main className="max-w-4xl mx-auto p-8">
       <Header />
       <About />
-      {/* <Projects /> */}
+      <Projects />
       <Experience />
       <Footer />
     </main>
