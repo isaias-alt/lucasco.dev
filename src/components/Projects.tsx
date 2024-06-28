@@ -37,7 +37,7 @@ const Projects = () => {
                   width={300}
                   height={500}
                   className="object-cover w-full h-48 rounded-md transition duration-500 sm:h-full md:scale-80 md:group-hover:scale-90"
-                  loading="lazy"
+                  priority={index === 0}
                 />
               </div>
 
