@@ -1,4 +1,4 @@
-interface Projects {
+interface Project {
   title: string
   description: string
   tags?: string[]
@@ -8,7 +8,7 @@ interface Projects {
   image: string
 }
 
-export const PROJECTS: Projects[] = [
+export const PROJECTS: Project[] = [
   {
     title: 'Code Quizz',
     description: 'Code Quizz is an interactive web application that allows users to answer code-related questions in various programming languages.',
