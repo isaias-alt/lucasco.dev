@@ -38,7 +38,6 @@ const ProjectCard = ({ title, description, tags, url, githubUrl, image, priority
             priority={priority}
           />
         </div>
-
         <div className="flex items-center justify-between space-x-[10px]">
           {url && (
             <a
@@ -68,7 +67,6 @@ const ProjectCard = ({ title, description, tags, url, githubUrl, image, priority
             ))}
           </div>
         )}
-
         <p className="mt-2 opacity-80 text-prety">{description}</p>
       </article>
     </div>
