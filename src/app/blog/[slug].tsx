@@ -49,7 +49,7 @@ const Post = ({ postData }: { postData: { title: string; date: string; content: 
         <meta property="og:title" content={`${postData.title} - Lucas Casco`} />
         <meta property="og:description" content={postData.description} />
       </Head>
-      <main className="flex flex-col space-y-5">
+      <main className="max-w-4xl mx-auto p-8">
         <div className="mt-7 flex flex-col space-y-2">
           <h2 className="text-3xl font-medium tracking-tighter md:text-4xl">{postData.title}</h2>
           <p className="text-neutral-800 dark:text-neutral-400">{postData.description}</p>
