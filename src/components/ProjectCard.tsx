@@ -5,7 +5,7 @@ import ArrowRightUp from "./icons/ArrowRightUp";
 import GitHubCode from "./icons/GitHubCode";
 import useProjectCardHover from "@/hooks/useProjectCardHover";
 
-interface ProjectCardProps {
+interface Props {
   title: string;
   description: string;
   tags?: string[];
@@ -15,7 +15,7 @@ interface ProjectCardProps {
   priority: boolean;
 }
 
-const ProjectCard = ({ title, description, tags, url, githubUrl, image, priority }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, tags, url, githubUrl, image, priority }: Props) => {
   const { divRef, position, opacity } = useProjectCardHover()
 
   return (
