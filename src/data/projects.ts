@@ -19,7 +19,7 @@ export const PROJECTS: Project[] = [
   },
   {
     title: 'STI UCSI',
-    description: 'The website displays the Catholic University seminar Shows the speakers, their topics and the calendar of events',
+    description: 'The website displays the Catholic University seminar. Shows the speakers, their topics and the calendar of events',
     tags: ['Atro', 'React.js', 'Tailwindcss'],
     url: 'https://sti-ucsi.vercel.app/',
     githubUrl: 'https://github.com/isaias-alt/sti-ucsi',
