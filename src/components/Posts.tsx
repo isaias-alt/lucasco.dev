@@ -9,7 +9,7 @@ const Posts = () => {
   return (
     <section className="flex flex-col space-y-4">
       <div className="flex w-full items-center justify-between">
-        <h2 className="text-xl font-medium">Latest Posts</h2>
+        <h2 className="text-xl font-medium">Recent Posts</h2>
         <a
           href="/blog"
           className="group flex items-center space-x-2 text-sm font-medium text-neutral-500 dark:text-neutral-400 duration-100 hover:text-black dark:hover:text-white"
