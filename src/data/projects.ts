@@ -15,6 +15,14 @@ export const PROJECTS: Project[] = [
     tags: ['React.js', 'Typescript', 'MUI', 'Zustand'],
     url: 'https://code-quizz.vercel.app/',
     githubUrl: 'https://github.com/isaias-alt/code-quizz',
-    image: '/projects/codequizz.webp'
+    image: '/projects/code-quizz.webp'
+  },
+  {
+    title: 'STI UCSI',
+    description: 'The website displays the Catholic University seminar Shows the speakers, their topics and the calendar of events',
+    tags: ['Atro', 'React.js', 'Tailwindcss'],
+    url: 'https://sti-ucsi.vercel.app/',
+    githubUrl: 'https://github.com/isaias-alt/sti-ucsi',
+    image: '/projects/sti-ucsi.webp'
   },
 ]
