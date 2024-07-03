@@ -5,10 +5,10 @@ import { formatDate } from '@/utils/date'
 import ArrowRightUp from '@/components/icons/ArrowRightUp'
 import ClockIcon from '@/components/icons/ClockIcon'
 import { Metadata } from 'next'
-import Markdown from 'react-markdown'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
-import remarkGfm from 'remark-gfm'
+import { remark } from 'remark';
+import html from 'remark-html';
 
 const postsDirectory = path.join(process.cwd(), 'src/posts')
 
@@ -23,13 +23,20 @@ interface Props {
 async function getPostData(slug: string): Promise<Props> {
   const fullPath = path.join(postsDirectory, slug, 'index.md')
   const fileContents = fs.readFileSync(fullPath, 'utf8')
+  
   const matterResult = matter(fileContents)
+
+  const processedContent = await remark()
+    .use(html)
+    .process(matterResult.content);
+  const contentHtml = processedContent.toString();
+  
   return {
     slug,
     title: matterResult.data.title,
     date: matterResult.data.date,
     description: matterResult.data.description,
-    content: matterResult.content,
+    content: contentHtml,
   }
 }
 
@@ -64,7 +71,6 @@ const Post = async ({ params }: { params: { slug: string } }) => {
       <div className="flex items-center justify-between border-b border-neutral-300 py-4 text-sm dark:border-neutral-800">
         <div className="flex items-center space-x-3">
           <time className="flex items-center space-x-2 text-neutral-800 dark:text-neutral-400" dateTime={postData.date}>
-            <ClockIcon size="5" />
             <span className="font-mono">{formatDate(postData.date)}</span>
           </time>
         </div>
@@ -74,12 +80,18 @@ const Post = async ({ params }: { params: { slug: string } }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span>Edit on GitHub</span>
-          <ArrowRightUp size="14" />
+          <span className="opacity-70 duration-200 group-hover:translate-x-[2px] group-hover:opacity-100">
+            Edit on GitHub
+          </span>
+          <span className="opacity-70 duration-200 group-hover:translate-x-[2px] group-hover:opacity-100">
+            <ArrowRightUp
+              className="w-4 h-4 ml-1"
+            />
+          </span>
         </a>
       </div>
       <article className="pb-5 prose prose-neutral prose-quoteless w-full max-w-full text-pretty dark:prose-invert">
-        <Markdown remarkPlugins={[remarkGfm]} >{postData.content}</Markdown>
+        <div dangerouslySetInnerHTML={{ __html: postData.content }} />
       </article>
       <Footer />
     </main>
