@@ -3,12 +3,10 @@ import path from 'path'
 import matter from 'gray-matter'
 import { formatDate } from '@/utils/date'
 import ArrowRightUp from '@/components/icons/ArrowRightUp'
-import ClockIcon from '@/components/icons/ClockIcon'
 import { Metadata } from 'next'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
-import { remark } from 'remark';
-import html from 'remark-html';
+import Markdown from 'markdown-to-jsx'
 
 const postsDirectory = path.join(process.cwd(), 'src/posts')
 
@@ -25,18 +23,13 @@ async function getPostData(slug: string): Promise<Props> {
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   
   const matterResult = matter(fileContents)
-
-  const processedContent = await remark()
-    .use(html)
-    .process(matterResult.content);
-  const contentHtml = processedContent.toString();
   
   return {
     slug,
     title: matterResult.data.title,
     date: matterResult.data.date,
     description: matterResult.data.description,
-    content: contentHtml,
+    content: matterResult.content,
   }
 }
 
@@ -90,8 +83,8 @@ const Post = async ({ params }: { params: { slug: string } }) => {
           </span>
         </a>
       </div>
-      <article className="pb-5 prose prose-neutral prose-quoteless w-full max-w-full text-pretty dark:prose-invert">
-        <div dangerouslySetInnerHTML={{ __html: postData.content }} />
+      <article className="pb-5 prose prose-neutral prose-quoteless w-full max-w-full text-pretty">
+        <Markdown>{postData.content}</Markdown>
       </article>
       <Footer />
     </main>
