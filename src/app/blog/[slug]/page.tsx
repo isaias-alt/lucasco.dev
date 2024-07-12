@@ -4,7 +4,6 @@ import matter from 'gray-matter'
 import { formatDate } from '@/utils/date'
 import ArrowRightUp from '@/components/icons/ArrowRightUp'
 import { Metadata } from 'next'
-import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import Markdown from 'markdown-to-jsx'
 
@@ -54,39 +53,58 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 const Post = async ({ params }: { params: { slug: string } }) => {
   const postData = await getPostData(params.slug)
 
+  const twitterText = `I just read "${postData.title}" by @lucascodev. \n\nCheck it out! https://lucasco.dev/blog/${postData.slug}`
+  const editOnGitHubUrl = `https://github.com/isaias-alt/lucasco.dev/blob/main/src/posts/${postData.slug}/index.md`
+  const shareOnTwitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(twitterText)}`
+
   return (
     <main className="max-w-4xl mx-auto p-8">
       <Header />
       <div className="mt-7 flex flex-col space-y-2">
-        <h2 className="text-3xl font-medium tracking-tighter md:text-4xl">{postData.title}</h2>
-        <p className="text-neutral-800 dark:text-neutral-400">{postData.description}</p>
+        <h1 className="font-bold tracking-tighter md:text-4xl">{postData.title}</h1>
       </div>
-      <div className="flex items-center justify-between border-b border-neutral-300 py-4 text-sm dark:border-neutral-800">
-        <div className="flex items-center space-x-3">
-          <time className="flex items-center space-x-2 text-neutral-800 dark:text-neutral-400" dateTime={postData.date}>
+      <div className="flex items-center justify-between pt-3 text-sm ">
+        <div className="flex items-center">
+          <time className="flex items-center text-neutral-800 dark:text-neutral-400" dateTime={postData.date}>
             <span className="font-mono">{formatDate(postData.date)}</span>
           </time>
         </div>
-        <a
-          href={`https://github.com/isaias-alt/lucasco.dev/blob/main/src/posts/${postData.slug}/index.md`}
-          className="flex items-center space-x-1 text-neutral-600 transition-colors duration-200 ease-in-out hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span className="opacity-70 duration-200 group-hover:translate-x-[2px] group-hover:opacity-100">
-            Edit on GitHub
-          </span>
-          <span className="opacity-70 duration-200 group-hover:translate-x-[2px] group-hover:opacity-100">
-            <ArrowRightUp
-              className="w-4 h-4 ml-1"
-            />
-          </span>
-        </a>
       </div>
-      <article className="pb-5 prose prose-neutral prose-quoteless w-full max-w-full text-pretty">
+      <article className="pb-5 prose w-full max-w-full text-pretty">
         <Markdown>{postData.content}</Markdown>
       </article>
-      <Footer />
+      <div className='flex items-center justify-between border-t border-neutral-300 pt-4 text-sm dark:border-neutral-800'>
+        <a
+            href={editOnGitHubUrl}
+            className="flex items-center space-x-1 text-neutral-600 transition-colors duration-200 ease-in-out hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span className="opacity-70 duration-200 group-hover:translate-x-[2px] group-hover:opacity-100">
+              Edit on GitHub
+            </span>
+            <span className="opacity-70 duration-200 group-hover:translate-x-[2px] group-hover:opacity-100">
+              <ArrowRightUp
+                className="w-4 h-4 ml-1"
+              />
+            </span>
+          </a>
+          <a
+            href={shareOnTwitterUrl}
+            className="flex items-center space-x-1 text-neutral-600 transition-colors duration-200 ease-in-out hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span className="opacity-70 duration-200 group-hover:translate-x-[2px] group-hover:opacity-100">
+              Share on Twitter
+            </span>
+            <span className="opacity-70 duration-200 group-hover:translate-x-[2px] group-hover:opacity-100">
+              <ArrowRightUp
+                className="w-4 h-4 ml-1"
+              />
+            </span>
+          </a>
+      </div>
     </main>
   )
 }
