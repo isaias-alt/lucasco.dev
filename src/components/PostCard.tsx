@@ -1,6 +1,6 @@
 "use client"
 
-import useProjectCardHover from '@/hooks/useProjectCardHover';
+import useCardHover from '@/hooks/useCardHover';
 import { formatDate } from '@/utils/date';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
@@ -13,7 +13,7 @@ interface Props {
 }
 
 const PostCard: React.FC<Props> = ({ title, description, date, slug }) => {
-  const { divRef, position, opacity } = useProjectCardHover();
+  const { divRef, position, opacity } = useCardHover();
   const { theme } = useTheme();
 
   const gradientColor = theme === 'dark'

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import ArrowRightUp from "./icons/ArrowRightUp";
 import GitHubCode from "./icons/GitHubCode";
-import useProjectCardHover from "@/hooks/useProjectCardHover";
+import useCardHover from "@/hooks/useCardHover";
 import { useTheme } from 'next-themes';
 
 interface Props {
@@ -17,7 +17,7 @@ interface Props {
 }
 
 const ProjectCard: React.FC<Props> = ({ title, description, tags, url, githubUrl, image, priority }) => {
-  const { divRef, position, opacity } = useProjectCardHover();
+  const { divRef, position, opacity } = useCardHover();
   const { theme } = useTheme();
 
   const gradientColor = theme === 'dark'
