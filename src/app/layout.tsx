@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description: "Frontend Developer specialized in creating unique and amazing applications.",
     images: [
       {
-        url: "https://lucascasco.com/images/og-image.png",
+        url: "https://lucascasco.com/og.png",
         width: 1200,
         height: 630,
         alt: "Lucas Casco - Personal website",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description: "Frontend Developer specialized in creating unique and amazing applications.",
     images: [
       {
-        url: "https://lucascasco.com/images/og-image.png",
+        url: "https://lucascasco.com/og.png",
         width: 1200,
         height: 630,
         alt: "Lucas Casco - Personal website",
