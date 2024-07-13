@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect, useCallback } from "react";
 
-const useProjectCardHover = () => {
+const useCardHover = () => {
   const divRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [opacity, setOpacity] = useState(0);
@@ -44,4 +44,4 @@ const useProjectCardHover = () => {
   }
 }
 
-export default useProjectCardHover
+export default useCardHover
