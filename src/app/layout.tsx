@@ -11,12 +11,12 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://lucascasco.com",
+    url: "https://lucasco.dev",
     title: "Lucas Casco - Personal website",
     description: "Frontend Developer specialized in creating unique and amazing applications.",
     images: [
       {
-        url: "https://lucascasco.com/og.png",
+        url: "https://lucasco.dev/og.png",
         width: 1200,
         height: 630,
         alt: "Lucas Casco - Personal website",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description: "Frontend Developer specialized in creating unique and amazing applications.",
     images: [
       {
-        url: "https://lucascasco.com/og.png",
+        url: "https://lucasco.dev/og.png",
         width: 1200,
         height: 630,
         alt: "Lucas Casco - Personal website",
