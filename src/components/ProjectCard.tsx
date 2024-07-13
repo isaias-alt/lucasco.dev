@@ -4,6 +4,7 @@ import Image from "next/image";
 import ArrowRightUp from "./icons/ArrowRightUp";
 import GitHubCode from "./icons/GitHubCode";
 import useProjectCardHover from "@/hooks/useProjectCardHover";
+import { useTheme } from 'next-themes';
 
 interface Props {
   title: string;
@@ -15,8 +16,13 @@ interface Props {
   priority: boolean;
 }
 
-const ProjectCard = ({ title, description, tags, url, githubUrl, image, priority }: Props) => {
-  const { divRef, position, opacity } = useProjectCardHover()
+const ProjectCard: React.FC<Props> = ({ title, description, tags, url, githubUrl, image, priority }) => {
+  const { divRef, position, opacity } = useProjectCardHover();
+  const { theme } = useTheme();
+
+  const gradientColor = theme === 'dark'
+    ? `rgba(97, 97, 97, ${opacity * 0.1})`
+    : `rgba(97, 97, 97, ${opacity * 0.3})`;
 
   return (
     <div role="contentinfo" ref={divRef}>
@@ -25,7 +31,7 @@ const ProjectCard = ({ title, description, tags, url, githubUrl, image, priority
           className="pointer-events-none absolute -inset-px opacity-0 transition duration-300"
           style={{
             opacity: opacity,
-            background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(97, 97, 97, 0.1), transparent 60%)`,
+            background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, ${gradientColor}, transparent 60%)`,
           }}
         />
         <div className="w-full">
@@ -61,13 +67,13 @@ const ProjectCard = ({ title, description, tags, url, githubUrl, image, priority
         {tags && (
           <div className="flex flex-wrap mt-2 space-x-2">
             {tags.map((tag, index) => (
-              <span key={index} className="text-xs py-1 px-2 cursor-default rounded-md border border-neutral-300 bg-neutral-200/50 font-mono font-medium text-neutral-600 dark:border-neutral-800 dark:bg-neutral-800/60 dark:text-neutral-300">
+              <span key={index} className="text-xs my-1 py-1 px-2 cursor-default rounded-md border border-neutral-300 bg-neutral-200/50 font-mono font-medium text-neutral-600 dark:border-neutral-800 dark:bg-neutral-800/60 dark:text-neutral-300">
                 {tag}
               </span>
             ))}
           </div>
         )}
-        <p className="mt-2 opacity-80 text-prety">{description}</p>
+        <p className="mt-2 opacity-80 text-pretty">{description}</p>
       </article>
     </div>
   );

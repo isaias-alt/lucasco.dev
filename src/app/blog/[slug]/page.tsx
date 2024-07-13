@@ -84,10 +84,10 @@ const Post = async ({ params }: { params: { slug: string } }) => {
       <article className="pb-5 prose w-full max-w-full text-pretty">
         <Markdown>{postData.content}</Markdown>
       </article>
-      <div className="flex items-center justify-between border-t border-neutral-300 pt-4 text-sm dark:border-neutral-800">
+      <div className="flex items-center justify-between border-t border-neutral-300 pt-4 text-sm dark:border-neutral-700">
         <a
           href={editOnGitHubUrl}
-          className="flex items-center space-x-1 text-neutral-600 transition-colors duration-200 ease-in-out hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
+          className="flex items-center space-x-1 text-neutral-700 transition-colors duration-200 ease-in-out hover:text-black dark:text-neutral-300 dark:hover:text-white"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -100,7 +100,7 @@ const Post = async ({ params }: { params: { slug: string } }) => {
         </a>
         <a
           href={shareOnTwitterUrl}
-          className="flex items-center space-x-1 text-neutral-600 transition-colors duration-200 ease-in-out hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
+          className="flex items-center space-x-1 text-neutral-700 transition-colors duration-200 ease-in-out hover:text-black dark:text-neutral-300 dark:hover:text-white"
           target="_blank"
           rel="noopener noreferrer"
         >

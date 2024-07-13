@@ -4,7 +4,6 @@
 
 :root {
   color-scheme: light dark;
-  background-color: #171717cc;
 }
 
 html {
@@ -14,27 +13,24 @@ html {
 
 .prose {
   h2 {
-    @apply text-3xl text-white font-semibold;
+    @apply text-3xl text-black dark:text-white font-semibold;
   }
   p {
-    @apply text-white;
+    @apply text-black dark:text-white;
   }
   a {
-    @apply text-white;
+    @apply text-black dark:text-white;
   }
   li {
-    @apply text-white;
+    @apply text-black dark:text-white;
   }
-  ol {
-    @apply list-disc list-inside; /* Estilo para listas desordenadas y ordenadas */
-  }
-  ul {
-    @apply list-disc list-inside; /* Estilo para listas desordenadas y ordenadas */
+  ol, ul {
+    @apply list-disc list-inside;
   }
   pre {
-    @apply overflow-auto text-neutral-800 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800 rounded-lg p-4 mb-4; /* Estilo para bloques de código */
+    @apply overflow-auto text-black dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800 rounded-lg p-4 mb-4;
   }
   code {
-    @apply text-neutral-900 dark:text-neutral-100 bg-neutral-100 dark:bg-neutral-800 rounded p-1; /* Estilo para texto de código en línea */
+    @apply text-black dark:text-white bg-neutral-100 dark:bg-neutral-800 rounded p-1;
   }
 }
