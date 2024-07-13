@@ -8,7 +8,7 @@ description: Is worth or not
 
 Maybe. I don't really care. Unlike what happened when the *blogosphere* phenomenon exploded, now the Internet is consumed in a much more massive way, not through texts written by a random geek at home, but rather through one-minute videos or less. However, it's still in the written text, and not so much in the audiovisual content, where I find the highest quality content. It's in those niche blogs, on the topics that interest me, where a person, surprisingly similar to me, shares common interests, the place where I enjoy the most.
 
-Also, the flexibility that blogs offers is unparalleled. You are not limited by format or length; You can write as much or as little as you want. You can explore topics in depth, share personal experiences, or even publish detailed research. This creative freedom is something that is not easily found on other platforms.
+Also, the flexibility that blogs offers is unparalleled. You are not limited by format or length; you can write as much or as little as you want. You can explore topics in depth, share personal experiences, or even publish detailed research. This creative freedom is something that is not easily found on other platforms.
 
 And it's not just about writing; reading blogs also has its magic. Each blog is a window into another person's mind, an opportunity to learn and grow through their experiences and knowledge. It's a more intimate and thoughtful way to consume content, something many of us seek amidst the digital hubbub.
 
