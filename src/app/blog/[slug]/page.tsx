@@ -50,7 +50,12 @@ export async function generateMetadata({
       type: "article",
       title: `${postData.title} - Lucas Casco`,
       description: postData.description,
-    },
+      images: [
+        {
+          url: 'https://lucasco.dev/og.png',
+        },
+      ]
+    }
   };
 }
 
