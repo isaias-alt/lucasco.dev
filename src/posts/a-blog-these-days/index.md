@@ -30,7 +30,7 @@ I would like to recommend blogs that I consume, outside of the typical blogging 
 
 1. [**Coding Horror**](https://blog.codinghorror.com/): A blog by Jeff Atwood about programming and software development with interesting anecdotes and practical advice.
 2. [**Overreacted**](https://overreacted.io/): A blog by Dan Abramov, practically the godfather of React, one of the creators of Redux and a developer on the React team, where he shares his thoughts on development and software.
-3. [**midu.dev**](https://midu.dev/): A blog by Miguel Ángel Durán, a Spanish developer who writes about JavaScript, React, and other web development topics.
+3. [**Midudev**](https://midu.dev/): A blog by Miguel Ángel Durán, a Spanish developer who writes about JavaScript, React, and other web development topics.
 4. [**Flavio Copes**](https://flaviocopes.com/): A blog by Flavio Copes that offers tutorials and resources on web development, including JavaScript, Node.js, and more.
 5. [**Kent C. Dodds**](https://kentcdodds.com/blog): A blog by Kent C. Dodds, a well-known developer and educator in the world of JavaScript, React, and testing.
 6. [**UI from Mars**](https://www.uifrommars.com/): A blog by Cris Busquets about interface design and user experience, with resources and practical tips for designers and developers.
