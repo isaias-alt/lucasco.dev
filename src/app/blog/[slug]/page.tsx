@@ -1,39 +1,11 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
 import { Metadata } from "next";
 import PostHeader from "@/components/blog/PostHeader";
 import PostContent from "@/components/blog/PostContent";
 import PostActions from "@/components/blog/PostActions";
-
-const postsDirectory = path.join(process.cwd(), "src/posts");
-
-interface Props {
-  title: string;
-  date: string;
-  description: string;
-  content: string;
-  slug: string;
-}
-
-async function getPostData(slug: string): Promise<Props> {
-  const fullPath = path.join(postsDirectory, slug, "index.md");
-  const fileContents = fs.readFileSync(fullPath, "utf8");
-
-  const matterResult = matter(fileContents);
-
-  return {
-    slug,
-    title: matterResult.data.title,
-    date: matterResult.data.date,
-    description: matterResult.data.description,
-    content: matterResult.content,
-  };
-}
+import { getAllPostsSlugs, getPostData } from "@/services/posts";
 
 export async function generateStaticParams() {
-  const postsDirectories = fs.readdirSync(postsDirectory);
-  return postsDirectories.map((dir) => ({ slug: dir }));
+  return getAllPostsSlugs();
 }
 
 export async function generateMetadata({
