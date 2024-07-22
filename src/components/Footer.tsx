@@ -1,6 +1,5 @@
 import ArrowRightUp from "./icons/ArrowRightUp"
 
-/* eslint-disable react/no-unescaped-entities */
 const Footer = () => {
   const email = 'mailto:cascolucasisaias@gmail.com'
   const currentYear = new Date().getFullYear()
