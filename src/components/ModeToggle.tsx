@@ -21,7 +21,7 @@ const ModeToggle = () => {
   if (!mounted) return null 
   
   return (
-    <button onClick={toggleTheme} className="flex items-center justify-center opacity-80 transition-opacity duration-150 hover:opacity-100">
+    <button onClick={toggleTheme} className="flex items-center justify-center opacity-80 transition-opacity duration-150 hover:opacity-100 hover:scale-110 hover:rotate-12">
       { theme === "dark" ? <Sun /> : <Moon /> }
     </button>
   )

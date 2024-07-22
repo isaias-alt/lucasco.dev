@@ -9,7 +9,7 @@ const Header = () => {
       <nav className="flex justify-between items-center w-full max-w-4xl">
         <Link
           href='/'
-          className="opacity-80 transition-opacity duration-150 hover:opacity-100 "
+          className="opacity-80 transition-opacity duration-150 hover:opacity-100"
         >
           <span>lucasco.dev</span>
         </Link>

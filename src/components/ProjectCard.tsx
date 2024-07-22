@@ -58,7 +58,7 @@ const ProjectCard: React.FC<Props> = ({ title, description, tags, url, githubUrl
             </a>
           )}
           {githubUrl && (
-            <a className="pt-4" href={githubUrl} target="_blank">
+            <a className="pt-4 hover:scale-110" href={githubUrl} target="_blank">
               <GitHubCode />
             </a>
           )}

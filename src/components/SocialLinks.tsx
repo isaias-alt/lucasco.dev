@@ -14,7 +14,7 @@ const SocialLinks: React.FC<Props> = ({ name, url, Icon }) => {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={name}
-      className="opacity-80 transition-opacity duration-150 hover:opacity-100"
+      className="opacity-80 transition-opacity duration-150 hover:scale-110 hover:opacity-100"
     >
       <Icon />
     </a>
