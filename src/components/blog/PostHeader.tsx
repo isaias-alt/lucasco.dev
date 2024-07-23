@@ -4,7 +4,6 @@ import Header from "../Header";
 const PostHeader = ({ title, date }: { title: string; date: string }) => {
   return (
     <>
-      <Header />
       <div className="mt-7 flex flex-col space-y-2">
         <h1 className="font-bold tracking-tighter text-5xl">
           {title}

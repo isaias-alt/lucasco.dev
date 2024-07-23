@@ -6,8 +6,7 @@ const Blog = () => {
   const allPostsData = getSortedPostsData()
   
   return (
-    <main className="max-w-4xl mx-auto p-8">
-      <Header />
+    <main>
       <h1 className="text-xl font-medium mb-4 py-6">All Posts</h1>
       <div className="flex flex-col space-y-4">
         {allPostsData.map(({ id, title, description, date }) => (
