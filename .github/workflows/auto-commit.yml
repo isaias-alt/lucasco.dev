@@ -2,8 +2,7 @@ name: Auto Commit
 
 on:
   schedule:
-    # Este cron job se ejecuta todos los días a las 00:00 UTC
-    - cron: '*/1 * * * *'
+    - cron: '*/1 * * * *'  # Ejecutar cada minuto
 
 jobs:
   auto-commit:
@@ -24,9 +23,10 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add lastUpdate.txt
-        git commit -m "Auto commit on $(date)"
+        git commit -m "Auto commit on $(date)" || echo "No changes to commit"
 
     - name: Push changes
-      uses: ad-m/github-push-action@v0.6.0
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)
+      env:
+        GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
