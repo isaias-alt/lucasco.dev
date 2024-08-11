@@ -1,0 +1,32 @@
+name: Auto Commit
+
+on:
+  schedule:
+    # Este cron job se ejecuta todos los días a las 00:00 UTC
+    - cron: '*/1 * * * *'
+
+jobs:
+  auto-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18'
+
+    - name: Create or update lastUpdate.txt
+      run: |
+        echo "Last update: $(date)" > lastUpdate.txt
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add lastUpdate.txt
+        git commit -m "Auto commit on $(date)"
+
+    - name: Push changes
+      uses: ad-m/github-push-action@v0.6.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
