@@ -8,7 +8,7 @@ export const getPostMetadata = async (slug: string): Promise<Metadata> => {
     description: postData.description,
     openGraph: {
       type: 'article',
-      title: `${postData.title} - Lucas Casco`,
+      title: `${postData.title} | Lucas Casco`,
       description: postData.description,
       images: [
         {

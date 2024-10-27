@@ -1,15 +1,17 @@
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
 
 export const getSiteMetadata = (): Metadata => {
   return {
-    title: "Lucas Casco - Personal website",
-    description: "Frontend Developer specialized in creating unique and amazing applications.",
+    title: "Lucas Casco | Personal website",
+    description:
+      "Frontend Developer specialized in creating unique and amazing applications.",
     openGraph: {
       type: "website",
       locale: "en_US",
       url: "https://lucasco.dev",
       title: "Lucas Casco - Personal website",
-      description: "Frontend Developer specialized in creating unique and amazing applications.",
+      description:
+        "Frontend Developer specialized in creating unique and amazing applications.",
       images: [
         {
           url: "https://lucasco.dev/og.png",
@@ -23,7 +25,8 @@ export const getSiteMetadata = (): Metadata => {
       card: "summary_large_image",
       title: "Lucas Casco - Personal website",
       creator: "@lucascascodev",
-      description: "Frontend Developer specialized in creating unique and amazing applications.",
+      description:
+        "Frontend Developer specialized in creating unique and amazing applications.",
       images: [
         {
           url: "https://lucasco.dev/og.png",
