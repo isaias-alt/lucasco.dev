@@ -5,11 +5,11 @@ import { Separator } from "@/components/ui/separator";
 import {
   Tooltip,
   TooltipContent,
-  TooltipTrigger
+  TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { DATA } from "@/data/resume";
 
 export default function Navbar() {
   return (
@@ -22,37 +22,43 @@ export default function Navbar() {
               <TooltipTrigger asChild>
                 <Link
                   href={item.href}
-                  className={cn(buttonVariants({ variant: "ghost", size: "icon" }),
+                  className={cn(
+                    buttonVariants({ variant: "ghost", size: "icon" }),
                     "size-12"
                   )}
                 >
                   <item.icon className="size-4" />
                 </Link>
               </TooltipTrigger>
-            </Tooltip>
-          </DockIcon>
-        ))}
-        <Separator orientation="vertical" className="h-full" />
-        {Object.entries(DATA.contact.socials).filter(([_, social]) => social.navbar).map(([name, social]) => (
-          <DockIcon key={name}>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Link
-                  href={social.url}
-                  className={cn(
-                    buttonVariants({ variant: "ghost", size: "icon" }),
-                    "size-12"
-                  )}
-                >
-                  <social.icon className="size-4" />
-                </Link>
-              </TooltipTrigger>
               <TooltipContent>
-                <p>{name}</p>
+                <p>{item.label}</p>
               </TooltipContent>
             </Tooltip>
           </DockIcon>
         ))}
+        <Separator orientation="vertical" className="h-full" />
+        {Object.entries(DATA.contact.socials)
+          .filter(([_, social]) => social.navbar)
+          .map(([name, social]) => (
+            <DockIcon key={name}>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    href={social.url}
+                    className={cn(
+                      buttonVariants({ variant: "ghost", size: "icon" }),
+                      "size-12"
+                    )}
+                  >
+                    <social.icon className="size-4" />
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{name}</p>
+                </TooltipContent>
+              </Tooltip>
+            </DockIcon>
+          ))}
         <Separator orientation="vertical" className="h-full py-2" />
         <DockIcon>
           <Tooltip>
@@ -66,5 +72,5 @@ export default function Navbar() {
         </DockIcon>
       </Dock>
     </div>
-  )
+  );
 }

@@ -16,21 +16,21 @@ const DEFAULT_MAGNIFICATION = 60;
 const DEFAULT_DISTANCE = 140;
 
 const dockVariants = cva(
-  "mx-auto w-max h-full p-2 flex intems-end rounded-full border"
-)
+  "mx-auto w-max h-full p-2 flex items-end rounded-full border"
+);
 
 const Dock = React.forwardRef<HTMLDivElement, DockProps>(
   (
     {
       className,
+      children,
       magnification = DEFAULT_MAGNIFICATION,
       distance = DEFAULT_DISTANCE,
-      children,
       ...props
     },
     ref
   ) => {
-    const mousex = useMotionValue(Infinity)
+    const mousex = useMotionValue(Infinity);
 
     const renderChildren = () => {
       return React.Children.map(children, (child: any) => {
@@ -39,9 +39,9 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
             mousex,
             magnification,
             distance,
-          } as DockIconProps)
+          } as DockIconProps);
         }
-        return child
+        return child;
       });
     };
 
@@ -49,15 +49,15 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
       <motion.div
         ref={ref}
         onMouseMove={(e) => mousex.set(e.pageX)}
-        onMouseLeave={(e) => mousex.set(Infinity)}
+        onMouseLeave={() => mousex.set(Infinity)}
         {...props}
-        className={cn(dockVariants, className)}
+        className={cn(dockVariants({ className }))}
       >
         {renderChildren()}
       </motion.div>
-    )
+    );
   }
-)
+);
 
 Dock.displayName = "Dock";
 
@@ -85,19 +85,19 @@ const DockIcon = ({
   const distanceCalc = useTransform(mousex, (val: number) => {
     const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
     return val - bounds.x - bounds.width / 2;
-  })
+  });
 
   let widthSync = useTransform(
     distanceCalc,
     [-distance, 0, distance],
     [40, magnification, 40]
-  )
+  );
 
   let width = useSpring(widthSync, {
     mass: 0.1,
     stiffness: 150,
     damping: 12,
-  })
+  });
 
   return (
     <motion.div
@@ -111,8 +111,8 @@ const DockIcon = ({
     >
       {children}
     </motion.div>
-  )
-}
+  );
+};
 
 DockIcon.displayName = "DockIcon";
 

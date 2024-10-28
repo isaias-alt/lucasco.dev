@@ -57,3 +57,5 @@ const BlurFade = ({
     </AnimatePresence>
   );
 };
+
+export default BlurFade 

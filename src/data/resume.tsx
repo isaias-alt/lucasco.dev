@@ -7,7 +7,7 @@ export const DATA = {
   url: "https://lucasco.dev",
   location: "Paraguay",
   locationLink: "https://www.google.com/maps/place/paraguay",
-  desciption: "Frontend Developer from Paraguay with +3 years of experience.",
+  description: "Frontend Developer from Paraguay with +3 years of experience.",
   summary:
     "",
   avatarUrl: "/me.png",
