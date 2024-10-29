@@ -13,8 +13,8 @@ function getMDXDirectories(dir: string) {
     .filter((subdir) => fs.statSync(path.join(dir, subdir)).isDirectory());
 }
 
-export async function markdownToHtml(markdown: string) {
-  const p = unified()
+export async function markdownToHTML(markdown: string) {
+  const p = await unified()
     .use(remarkParse)
     .use(remarkRehype)
     .use(rehypePrettyCode, {
@@ -31,10 +31,10 @@ export async function markdownToHtml(markdown: string) {
 }
 
 export async function getPost(slug: string) {
-  const filePath = path.join("content", slug, `${slug}.mdx`);
-  let source = fs.readFileSync(filePath, "utf8");
+  const filePath = path.join("content", slug, "index.mdx");
+  let source = fs.readFileSync(filePath, "utf-8");
   const { content: rawContent, data: metadata } = matter(source);
-  const content = await markdownToHtml(rawContent);
+  const content = await markdownToHTML(rawContent);
   return {
     source: content,
     metadata,
@@ -42,7 +42,7 @@ export async function getPost(slug: string) {
   };
 }
 
-export async function getAllPosts(dir: string) {
+async function getAllPosts(dir: string) {
   const mdxDirs = getMDXDirectories(dir);
   return Promise.all(
     mdxDirs.map(async (slug) => {
