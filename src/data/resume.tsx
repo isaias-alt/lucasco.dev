@@ -144,6 +144,7 @@ export const DATA = {
       degree: "Engineering Informatic",
       start: "2019",
       end: "Current",
+      logoUrl: "",
     },
     {
       school: `Colegio Nacional "Prof.: Luciano Bordón"`,
@@ -151,6 +152,7 @@ export const DATA = {
       degree: "Informatic Technician",
       start: "2016",
       end: "2019",
+      logoUrl: "",
     }
   ],
 } as const;
