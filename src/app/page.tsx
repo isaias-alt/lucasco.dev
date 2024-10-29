@@ -93,7 +93,6 @@ export default function Home() {
             >
               <ResumeCard
                 key={work.company}
-                altText={work.company}
                 title={work.company}
                 subtitle={work.title}
                 href={work.href}
@@ -119,8 +118,6 @@ export default function Home() {
               <ResumeCard
                 key={education.school}
                 href={education.href}
-                logoUrl={education.logoUrl}
-                altText={education.school}
                 title={education.school}
                 subtitle={education.degree}
                 period={`${education.start} - ${education.end}`}
