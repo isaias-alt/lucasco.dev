@@ -6,13 +6,10 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
 export async function generateMetadata({
-  params,
+  params: { slug },
 }: {
-  params: {
-    slug: string;
-  };
+  params: { slug: string };
 }): Promise<Metadata | undefined> {
-  const { slug } = await params;
 
   if (!slug) {
     return undefined;
@@ -53,14 +50,10 @@ export async function generateMetadata({
 }
 
 export default async function Blog({
-  params,
+  params: { slug },
 }: {
-  params: {
-    slug: string;
-  };
+  params: { slug: string };
 }) {
-  const { slug } = await params;
-
   if (!slug) {
     notFound();
   }
