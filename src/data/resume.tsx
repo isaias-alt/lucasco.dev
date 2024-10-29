@@ -11,6 +11,7 @@ export const DATA = {
   summary:
     "",
   avatarUrl: "/me.webp",
+  ogImage: "/og.png",
   skills: [
     "React.js",
     "Next.js",
@@ -143,7 +144,13 @@ export const DATA = {
       degree: "Engineering Informatic",
       start: "2019",
       end: "Current",
-      logoUrl: "/ucsi.png",
     },
+    {
+      school: `Colegio Nacional "Prof.: Luciano Bordón"`,
+      href: "https://datos.mec.gov.py/doc/establecimientos/0807003",
+      degree: "Informatic Technician",
+      start: "2016",
+      end: "2019",
+    }
   ],
 } as const;

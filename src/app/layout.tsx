@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(DATA.url),
   title: {
     default: DATA.name,
-    template: `%s - ${DATA.name}`,
+    template: `%s | ${DATA.name}`,
   },
   description: DATA.description,
   openGraph: {
@@ -26,6 +26,14 @@ export const metadata: Metadata = {
     siteName: `${DATA.name}`,
     title: DATA.name,
     description: DATA.description,
+    images: [
+      {
+        url: DATA.ogImage,
+        width: 1200,
+        height: 630,
+        alt: `${DATA.name}`,
+      },
+    ],
   },
   robots: {
     index: true,
@@ -41,6 +49,14 @@ export const metadata: Metadata = {
   twitter: {
     title: `${DATA.name}`,
     description: DATA.description,
+    images: [
+      {
+        url: DATA.ogImage,
+        width: 1200,
+        height: 630,
+        alt: `${DATA.name}`,
+      },
+    ],
     card: "summary_large_image",
     site: "@lucascodev",
     creator: "@lucascodev",
