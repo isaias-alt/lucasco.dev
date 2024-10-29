@@ -10,7 +10,7 @@ export const DATA = {
   description: "Frontend Developer from Paraguay with +3 years of experience.",
   summary:
     "",
-  avatarUrl: "/me.png",
+  avatarUrl: "/me.webp",
   skills: [
     "React.js",
     "Next.js",
