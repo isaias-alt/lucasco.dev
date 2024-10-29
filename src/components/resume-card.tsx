@@ -9,8 +9,6 @@ import Link from "next/link";
 import React from "react";
 
 interface ResumeCardProps {
-  logoUrl?: string;
-  altText: string;
   title: string;
   subtitle?: string;
   href?: string;
@@ -19,8 +17,6 @@ interface ResumeCardProps {
   description?: string;
 }
 export const ResumeCard = ({
-  logoUrl,
-  altText,
   title,
   subtitle,
   href,
