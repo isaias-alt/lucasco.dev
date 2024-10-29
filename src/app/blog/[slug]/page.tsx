@@ -5,11 +5,11 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
+// Cambia el tipo de la función para que sepa que está usando promesas
 export async function generateStaticParams() {
   const posts = await getBlogPosts();
   return posts.map((post) => ({ slug: post.slug }));
 }
-
 
 export async function generateMetadata({
   params,
@@ -18,15 +18,20 @@ export async function generateMetadata({
     slug: string;
   };
 }): Promise<Metadata | undefined> {
-  let post = await getPost(params.slug);
+  const post = await getPost(params.slug);
 
-  let {
+  if (!post) {
+    notFound();
+  }
+
+  const {
     title,
     publishedAt: publishedTime,
     summary: description,
     image,
   } = post.metadata;
-  let ogImage = image ? `${DATA.url}${image}` : `${DATA.url}/og?title=${title}`;
+
+  const ogImage = image ? `${DATA.url}${image}` : `${DATA.url}/og?title=${title}`;
 
   return {
     title,
@@ -56,10 +61,10 @@ export default async function Blog({
   params,
 }: {
   params: {
-    slug: string;
+    slug: string; // Mantén params como un objeto simple
   };
 }) {
-  let post = await getPost(params.slug);
+  const post = await getPost(params.slug); // Aquí puedes acceder directamente a params.slug
 
   if (!post) {
     notFound();
