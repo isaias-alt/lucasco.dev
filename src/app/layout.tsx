@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     description: DATA.description,
     images: [
       {
-        url: DATA.ogImage,
+        url: 'https://lucasco.dev/og.png',
         width: 1200,
         height: 630,
         alt: `${DATA.name}`,
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     description: DATA.description,
     images: [
       {
-        url: DATA.ogImage,
+        url: 'https://lucasco.dev/og.png',
         width: 1200,
         height: 630,
         alt: `${DATA.name}`,
