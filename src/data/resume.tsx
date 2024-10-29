@@ -136,4 +136,14 @@ export const DATA = {
       video: "",
     },
   ],
+  education: [
+    {
+      school: "Universidad Católica Nuestra Señora de la Asunción",
+      href: "https://www.universidadcatolica.edu.py/",
+      degree: "Engineering Informatic",
+      start: "2019",
+      end: "Current",
+      logoUrl: "/ucsi.png",
+    },
+  ],
 } as const;
