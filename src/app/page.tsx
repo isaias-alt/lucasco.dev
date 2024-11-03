@@ -127,16 +127,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about">
-        <BlurFade delay={BLUR_FADE_DELAY * 3}>
-          <h2 className="text-2xl font-bold">About</h2>
-        </BlurFade>
-        <BlurFade delay={BLUR_FADE_DELAY * 4}>
-          <Markdown className="prose max-w-full text-pretty font-sans text-base text-muted-foreground dark:prose-invert">
-            {DATA.summary}
-          </Markdown>
-        </BlurFade>
-      </section>
+
 
       <section id="skills">
         <div className="flex min-h-0 flex-col gap-y-3">
@@ -151,6 +142,17 @@ export default function Home() {
             ))}
           </div>
         </div>
+      </section>
+
+      <section id="about">
+        <BlurFade delay={BLUR_FADE_DELAY * 3}>
+          <h2 className="text-2xl font-bold">About</h2>
+        </BlurFade>
+        <BlurFade delay={BLUR_FADE_DELAY * 4}>
+          <Markdown className="prose max-w-full text-pretty font-sans text-base text-muted-foreground dark:prose-invert">
+            {DATA.summary}
+          </Markdown>
+        </BlurFade>
       </section>
 
       <section id="contact">
