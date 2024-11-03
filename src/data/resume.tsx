@@ -9,7 +9,7 @@ export const DATA = {
   locationLink: "https://www.google.com/maps/place/paraguay",
   description: "Frontend Developer from Paraguay with +3 years of experience.",
   summary:
-    "",
+    "My journey in programming started in 2017, during my college years. Together with two colleagues, he developed my first video game: a 2D platform game that managed to obtain second place in a local competition. This experience was eye-opening, giving me my first idea of ​​the potential that technology had to create unique and exciting experiences. In 2018, motivated by the previous project, I created another video game again, which reaffirmed my interest in software development. However, starting college in 2019, my dedication to programming was not as deep. It was during the pandemic that I decided to take learning software development seriously, and in that process I discovered a true passion that drove me to deepen my knowledge and skills.",
   avatarUrl: "/me.webp",
   skills: [
     "React.js",
