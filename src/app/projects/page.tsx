@@ -2,6 +2,11 @@ import BlurFade from "@/components/magicui/blur-fade"
 import { ProjectCard } from "@/components/project-card"
 import { DATA } from "@/data/resume"
 
+export const metadata = {
+  title: "Projects",
+  description: "My projects and open source contributions.",
+};
+
 const BLUR_FADE_DELAY = 0.04
 
 const ProjectPage = () => {
