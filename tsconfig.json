@@ -33,7 +33,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts", 
-    "src/config/redirects.mts"  
+    "src/config/redirects.mjs"  
   ],
   "exclude": [
     "node_modules"
