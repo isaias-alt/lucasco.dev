@@ -32,7 +32,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts", 
+    "src/config/redirects.mts"  
   ],
   "exclude": [
     "node_modules"
