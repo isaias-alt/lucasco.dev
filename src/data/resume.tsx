@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon, NotebookIcon, CodeIcon, Link, PenLine } from "lucide-react";
+import { HomeIcon, NotebookIcon, CodeIcon, PenLine } from "lucide-react";
 
 export const DATA = {
   name: "Lucas Casco",
@@ -31,7 +31,6 @@ export const DATA = {
 
   ],
   contact: {
-    email: "cascolucasisaias@gmail.com",
     socials: {
       LinkedIn: {
         name: "LinkedIn",
@@ -54,12 +53,12 @@ export const DATA = {
 
         navbar: true,
       },
-      email: {
-        name: "Send Email",
-        url: "#",
-        icon: Icons.email,
+      Bluesky: {
+        name: "Bluesky",
+        url: "https://bsky.app/profile/lucasco.dev/",
+        icon: Icons.bluesky,
 
-        navbar: false,
+        navbar: true,
       },
     },
   },
