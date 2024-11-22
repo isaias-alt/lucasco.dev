@@ -1,5 +1,6 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon, NotebookIcon, CodeIcon, PenLine } from "lucide-react";
+import { HomeIcon, NotebookIcon, CodeIcon, PenLine, Compass } from "lucide-react";
+import { compileFunction } from "vm";
 
 export const DATA = {
   name: "Lucas Casco",
@@ -65,6 +66,18 @@ export const DATA = {
 
   work: [
     {
+      company: "SODEP",
+      href: "https://sodep.com.py/",
+      badges: [],
+      location: "Remote",
+      title: "Frontend Web Developer",
+      logoUrl: "",
+      start: "Nov 2024",
+      end: "Present",
+      description:
+        "Responsible for creating dynamic and user-friendly interfaces and streamlining the development process",
+    },
+    {
       company: "Freelance",
       href: "",
       badges: [],
@@ -72,7 +85,7 @@ export const DATA = {
       title: "Fullstack Developer",
       logoUrl: "",
       start: "Jun 2021",
-      end: "Present",
+      end: "Nov 2024",
       description:
         "For the last few years, I have worked as a freelance frontend developer, specializing in creating frontend technologies that allow companies and businesses to showcase and market their products with exceptional effectiveness.",
     },
