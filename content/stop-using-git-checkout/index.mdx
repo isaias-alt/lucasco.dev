@@ -30,3 +30,47 @@ The need arose for a new version control system, so **Linus Torvalds**, the crea
 In just weeks, Torvalds and a small group of developers created the first version of Git. It was released in April 2005 and within months, Git became the main version control system for the Linux kernel.
 
 Since then, **Git has revolutionized the way teams work on software projects**, enabling more agile, secure, and collaborative workflows.
+
+## The Unix philosophy: "Make each program do one thing well"
+
+**Unix** is ​​an operating system developed towards the end of the 60s and that **represented a revolution in the technological market** due to its characteristics based on the principles of portability and multitasking. This new way of working constitutes the foundations of the so-called **Unix philosophy**, which is nothing more than a set of principles or standards for software development based on the experience of Unix developers.
+
+Before the appearance of the Unix system, attempts to try to meet all the user's needs through a single large and complex program were common. This is why Unix developers such as Ken Thompson opted to **create several simple, powerful, and mutually compatible programs** that were in charge of accomplishing a single specific task. This is how the Unix philosophy adopts the slogan **“small is beautiful”**.
+
+Around 1978 Douglas Mcllroy was in charge of collecting the principles of the Unix system, which would later be summarized by Peter Salus in [A Quarter-Century of Unix](https://www.linuxjournal.com/article/2688), these being:
+
+1. Make each program do one thing and do it well
+2. Make programs work together
+3. Make programs able to maintain text inputs, because it is a universal interface
+
+In this article we will focus on the first.
+
+## The complexity of `git checkout`
+
+Git, as a tool inspired by these principles, seeks to adhere to this philosophy. However, some of its commands, such as `git checkout`, have challenged this idea by mixing multiple functions under a single flag.
+
+The `git checkout` command has been a mainstay in Git since its beginning, but it is also known for being confusing. This command fulfills two main functions:
+
+1. Switch between branches.
+2. Restore files or changes to the workspace.
+
+The problem arises because these two tasks are conceptually different, but they are grouped under the same command. This can lead to errors or confusion, especially for those learning Git. For example:
+
+- `git checkout main` changes the active branch to `main`.
+- `git checkout -- file.txt` restores a file to the state in which it is in the index or the last commit.
+
+In response to these limitations and in line with Unix philosophy, since [Git 2.23.0](https://git-scm.com/docs/git/2.23.0) two new commands were introduced that divide the responsibilities of `git checkout`.
+
+## `git switch`: Switch between branches clearly
+
+Explain `git switch`
+
+## `git restore`: Restore files or undo changes
+
+Explain `git restore`
+
+## Some tipical title like "Advantages of using `git switch` and `git restore`"
+
+1. **Greater clarity**: Commands are specific and aligned with Unix philosophy, reducing errors and confusion.
+2. **Better learning**: For new Git users, it's easier to understand the functionality of commands when each command has a clear purpose.
+3. **Supported Future**: The official Git documentation recommends the use of git switch and git restore, indicating that these commands could become the standard in the long term.
