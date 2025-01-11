@@ -30,7 +30,7 @@ function CustomLink(props: any) {
 
   if (href.startsWith("/")) {
     return (
-      <Link href={href} {...props}>
+      <Link href={href} target="_blank" {...props}>
         {props.children}
       </Link>
     );
@@ -48,7 +48,10 @@ function RoundedImage(props: any) {
 }
 
 function slugify(str: string) {
-  return str.toString().toLowerCase().trim()
+  return str
+    .toString()
+    .toLowerCase()
+    .trim()
     .replace(/\s+/g, "-")
     .replace(/&/g, "-and-")
     .replace(/[^\w\-]+/g, "")
@@ -65,12 +68,12 @@ function createHeading(level: number) {
         React.createElement("a", {
           className: "anchor",
           href: `#${slug}`,
-          key: `link-${slug}`
+          key: `link-${slug}`,
         }),
       ],
       children
     );
-  }
+  };
   Heading.displayName = `Heading${level}`;
   return Heading;
 }
