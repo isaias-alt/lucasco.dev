@@ -63,14 +63,51 @@ In response to these limitations and in line with Unix philosophy, since [Git 2.
 
 ## `git switch`: Switch between branches clearly
 
-Explain `git switch`
+The `git switch` command is more intuitive and explicit when it comes to switching branches. For example:
+
+```bash
+git switch main
+```
+
+This command makes it clear that the goal is to switch to the `main` branch, removing any ambiguity.
+
+In addition, it also allows you to create and switch to new branches more clearly:
+
+```bash
+git switch -c nueva-rama
+```
+
+This replaces using `git checkout -b new-branch`.
 
 ## `git restore`: Restore files or undo changes
 
-Explain `git restore`
+On the other hand, git restore is designed to restore files or undo changes to the workspace. For example:
 
-## Some tipical title like "Advantages of using `git switch` and `git restore`"
+```bash
+git restore file.txt
+```
+
+This restores `file.txt` to the state in which it is in the index or the last commit. If you need to discard changes in the staging area, you can also do that:
+
+```bash
+git restore --staged file.txt
+```
+
+This level of granularity makes the command's intentions clearer.
+
+## Advantages of using `git switch` and `git restore`
 
 1. **Greater clarity**: Commands are specific and aligned with Unix philosophy, reducing errors and confusion.
 2. **Better learning**: For new Git users, it's easier to understand the functionality of commands when each command has a clear purpose.
 3. **Supported Future**: The official Git documentation recommends the use of git switch and git restore, indicating that these commands could become the standard in the long term.
+
+## Wrap Up
+
+The introduction of `git switch` and `git restore` is a step towards a cleaner and friendlier Git. By adopting these commands, you will not only simplify your workflow, but you will also be aligned with Unix best practices and philosophy. It's time to take the leap and leave the `git checkout` ambiguity behind!
+
+### Additional Resources
+
+- [Official `git checkout` documentation](https://git-scm.com/docs/git-checkout)
+- [Official `git switch` documentation](https://git-scm.com/docs/git-switch)
+- [Official `git restore` documentation](https://git-scm.com/docs/git-restore)
+- [What is Unix Philosophy?](https://en.wikipedia.org/wiki/Unix_philosophy)
