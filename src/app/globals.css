@@ -93,33 +93,56 @@
 h3 code {
   @apply !text-lg md:!text-xl;
 }
+/* Estilos existentes... */
 
+/* Estilos para código en línea */
+:not(pre) > code {
+  @apply bg-muted px-1.5 py-0.5 rounded-md font-mono text-sm relative border border-border;
+}
+
+/* Clase específica para código en línea */
+.inline-code {
+  @apply bg-muted px-1.5 py-0.5 rounded-md font-mono text-sm relative border border-border;
+}
+
+/* Estilos para bloques de código */
 pre {
-  @apply !px-0 rounded-lg overflow-x-auto py-4;
-}
-
-pre [data-line] {
-  @apply px-4;
-}
-
-code {
-  @apply text-sm md:text-base !leading-loose;
+  @apply !px-0 rounded-lg overflow-x-auto py-4 bg-muted border border-border;
 }
 
 pre > code {
+  @apply grid;
   counter-reset: line;
 }
 
+pre [data-line] {
+  @apply border-l-2 border-l-transparent px-4;
+}
+
+pre [data-highlighted-line] {
+  @apply border-l-primary bg-primary/10;
+}
+
+/* Estilos para temas claro/oscuro */
 code[data-theme*=" "],
 code[data-theme*=" "] span {
   color: var(--shiki-light);
   background-color: var(--shiki-light-bg);
 }
 
-@media (prefers-color-scheme: dark) {
-  code[data-theme*=""],
+.dark {
+  code[data-theme*=" "],
   code[data-theme*=" "] span {
     color: var(--shiki-dark);
     background-color: var(--shiki-dark-bg);
   }
+}
+
+/* Ajustes específicos para código en línea */
+:not(pre) > code[data-theme*=" "] {
+  @apply bg-muted;
+}
+
+.dark :not(pre) > code[data-theme*=" "] {
+  @apply bg-muted;
 }
