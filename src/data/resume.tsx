@@ -39,28 +39,28 @@ export const DATA = {
     socials: {
       LinkedIn: {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/lucascodev/",
+        url: "https://lucasco.dev/linkedin",
         icon: Icons.linkedin,
 
         navbar: true,
       },
       GitHub: {
         name: "GitHub",
-        url: "https://github.com/isaias-alt/",
+        url: "https://lucasco.dev/github",
         icon: Icons.github,
 
         navbar: true,
       },
       X: {
         name: "X",
-        url: "https://x.com/lucascodev",
+        url: "https://lucasco.dev/x",
         icon: Icons.x,
 
         navbar: true,
       },
       Bluesky: {
         name: "Bluesky",
-        url: "https://bsky.app/profile/lucasco.dev/",
+        url: "https://lucasco.dev/bluesky",
         icon: Icons.bluesky,
 
         navbar: true,
