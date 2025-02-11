@@ -9,7 +9,7 @@ import Navbar from "@/components/navbar";
 
 const fontSans = FontSans({
   subsets: ["latin"],
-  variable: "--font-sans"
+  variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     description: DATA.description,
     images: [
       {
-        url: 'https://lucasco.dev/og.png',
+        url: "https://lucasco.dev/og.png",
         width: 1200,
         height: 630,
         alt: `${DATA.name}`,
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     description: DATA.description,
     images: [
       {
-        url: 'https://lucasco.dev/og.png',
+        url: "https://lucasco.dev/og.png",
         width: 1200,
         height: 630,
         alt: `${DATA.name}`,
