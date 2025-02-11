@@ -1,5 +1,11 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon, NotebookIcon, CodeIcon, PenLine, Compass } from "lucide-react";
+import {
+  HomeIcon,
+  NotebookIcon,
+  CodeIcon,
+  PenLine,
+  Compass,
+} from "lucide-react";
 import { compileFunction } from "vm";
 
 export const DATA = {
@@ -28,8 +34,6 @@ export const DATA = {
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "/projects", icon: CodeIcon, label: "Projects" },
     { href: "/blog", icon: NotebookIcon, label: "Blog" },
-    { href: "/notes", icon: PenLine, label: "Notes" },
-
   ],
   contact: {
     socials: {
@@ -127,12 +131,7 @@ export const DATA = {
       active: false,
       description:
         "The website displays the Catholic University seminar. Shows the speakers, their topics and the calendar of events",
-      technologies: [
-        "Astro",
-        "React.js",
-        "Typescript",
-        "TailwindCSS",
-      ],
+      technologies: ["Astro", "React.js", "Typescript", "TailwindCSS"],
       links: [
         {
           type: "Website",
@@ -163,6 +162,6 @@ export const DATA = {
       degree: "Informatic Technician",
       start: "2016",
       end: "2019",
-    }
+    },
   ],
 } as const;
