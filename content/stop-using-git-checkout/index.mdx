@@ -1,0 +1,113 @@
+---
+title: Stop using git checkout
+publishedAt: "2025-02-11"
+summary: It's time to replace `git checkout`
+---
+
+Git is one of the essential tools for any developer, but like all constantly evolving software, its commands and best practices also change over time. In this article, we'll explore why you should consider stopping using `git checkout` and instead adopt the `git switch` and `git restore` commands. We will base our argument on Unix philosophy and the official Git documentation.
+
+![Git](/blog/stop-using-git-chekout/git-1.webp)
+
+## A look back: What was development like before Git?
+
+I wasn't there, but I investigated and was able to ask colleagues with more expertise and experience than me. Before Git became the de facto standard for version control, developers used _Centralized Version Control Systems_ like **Concurrent Version System** (CVS), **Subversion** (SVN), and others. Although these systems helped manage collaborative projects, they had significant limitations:
+
+1. **Slow performance**: Operations like creating branches or performing merges were slow and often inefficient.
+2. **Dependency on a central server**: Most of these systems were centralized, making offline work difficult or impossible.
+3. **Complex conflicts**: Resolving code conflicts was tedious and error-prone.
+
+The origins of Git come from the **Linux Kernel project**, one of the largest and most complex open-source projects that exist. During the early years of its development the Linux Kernel was managed using a proprietary version control system called **BitKeeper**. BitKeeper is a _distributed version control system_ (DVCS), which addressed many of the limitations of Centralized Version Control Systems such as CVS and SVN. BitKeeper allowed developers to have their own copy of the entire project history, allowing for offline work and faster performance.
+
+While BitKeeper initially worked well, in 2005, BitMover, the company behind BitKeeper, withdrew the free license for open-source developers, leaving the Linux community without a version control system.
+
+The need arose for a new version control system, so **Linus Torvalds**, the creator of Linux, decided to create one of his own. His goals were clear:
+
+- **Speed**: The system must be fast and efficient, to be able to handle the large volume of contributions to the Linux Kernel.
+- **Distributed**: Like BitKeeper, the new system should allow developers to work independently, with their own copy of the repository.
+- **Strong Branching and Merging**: Linus emphasized that the new system should handle complex branching and merging scenarios without problems.
+- **Open-Source**: The new system must be free and open-source, ensuring that it can be widely adopted by the community.
+
+In just weeks, Torvalds and a small group of developers created the first version of Git. It was released in April 2005 and within months, Git became the main version control system for the Linux kernel.
+
+Since then, **Git has revolutionized the way teams work on software projects**, enabling more agile, secure, and collaborative workflows.
+
+## The Unix philosophy: "Make each program do one thing well"
+
+**Unix** is ​​an operating system developed towards the end of the 60s and that **represented a revolution in the technological market** due to its characteristics based on the principles of portability and multitasking. This new way of working constitutes the foundations of the so-called **Unix philosophy**, which is nothing more than a set of principles or standards for software development based on the experience of Unix developers.
+
+Before the appearance of the Unix system, attempts to try to meet all the user's needs through a single large and complex program were common. This is why Unix developers such as Ken Thompson opted to **create several simple, powerful, and mutually compatible programs** that were in charge of accomplishing a single specific task. This is how the Unix philosophy adopts the slogan **“small is beautiful”**.
+
+Around 1978 Douglas Mcllroy was in charge of collecting the principles of the Unix system, which would later be summarized by Peter Salus in [A Quarter-Century of Unix](https://www.linuxjournal.com/article/2688), these being:
+
+1. Make each program do one thing and do it well
+2. Make programs work together
+3. Make programs able to maintain text inputs, because it is a universal interface
+
+In this article we will focus on the first.
+
+## The complexity of `git checkout`
+
+Git, as a tool inspired by these principles, seeks to adhere to this philosophy. However, some of its commands, such as `git checkout`, have challenged this idea by mixing multiple functions under a single flag.
+
+The `git checkout` command has been a mainstay in Git since its beginning, but it is also known for being confusing. This command fulfills two main functions:
+
+1. Switch between branches.
+2. Restore files or changes to the workspace.
+
+The problem arises because these two tasks are conceptually different, but they are grouped under the same command. This can lead to errors or confusion, especially for those learning Git. For example:
+
+- `git checkout main` changes the active branch to `main`.
+- `git checkout -- file.txt` restores a file to the state in which it is in the index or the last commit.
+
+In response to these limitations and in line with Unix philosophy, since [Git 2.23.0](https://git-scm.com/docs/git/2.23.0) two new commands were introduced that divide the responsibilities of `git checkout`.
+
+## `git switch`: Switch between branches clearly
+
+The `git switch` command is more intuitive and explicit when it comes to switching branches. For example:
+
+```bash
+git switch main
+```
+
+This command makes it clear that the goal is to switch to the `main` branch, removing any ambiguity.
+
+In addition, it also allows you to create and switch to new branches more clearly:
+
+```bash
+git switch -c nueva-rama
+```
+
+This replaces using `git checkout -b new-branch`.
+
+## `git restore`: Restore files or undo changes
+
+On the other hand, git restore is designed to restore files or undo changes to the workspace. For example:
+
+```bash
+git restore file.txt
+```
+
+This restores `file.txt` to the state in which it is in the index or the last commit. If you need to discard changes in the staging area, you can also do that:
+
+```bash
+git restore --staged file.txt
+```
+
+This level of granularity makes the command's intentions clearer.
+
+## Advantages of using `git switch` and `git restore`
+
+1. **Greater clarity**: Commands are specific and aligned with Unix philosophy, reducing errors and confusion.
+2. **Better learning**: For new Git users, it's easier to understand the functionality of commands when each command has a clear purpose.
+3. **Supported Future**: The official Git documentation recommends the use of git switch and git restore, indicating that these commands could become the standard in the long term.
+
+## Wrap Up
+
+The introduction of `git switch` and `git restore` is a step towards a cleaner and friendlier Git. By adopting these commands, you will not only simplify your workflow, but you will also be aligned with Unix best practices and philosophy. It's time to take the leap and leave the `git checkout` ambiguity behind!
+
+### Additional Resources
+
+- [Official `git checkout` documentation](https://git-scm.com/docs/git-checkout)
+- [Official `git switch` documentation](https://git-scm.com/docs/git-switch)
+- [Official `git restore` documentation](https://git-scm.com/docs/git-restore)
+- [What is Unix Philosophy?](https://en.wikipedia.org/wiki/Unix_philosophy)

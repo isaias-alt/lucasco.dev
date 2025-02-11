@@ -19,9 +19,10 @@ export async function markdownToHTML(markdown: string) {
     .use(remarkRehype)
     .use(rehypePrettyCode, {
       theme: {
-        light: "min-light",
-        dark: "min-dark",
+        light: "github-light",
+        dark: "github-dark",
       },
+      defaultLang: "markdown",
       keepBackground: false,
     })
     .use(rehypeStringify)

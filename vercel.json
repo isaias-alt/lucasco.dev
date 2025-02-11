@@ -1,0 +1,24 @@
+{
+  "redirects": [
+    {
+      "source": "/linkedin",
+      "destination": "https://www.linkedin.com/in/lucascodev/",
+      "permanent": true
+    },
+    {
+      "source": "/github",
+      "destination": "https://github.com/isaias-alt",
+      "permanent": true
+    },
+    {
+      "source": "/bluesky",
+      "destination": "https://bsky.app/profile/lucasco.dev/",
+      "permanent": true
+    },
+    {
+      "source": "/x",
+      "destination": "https://x.com/lucascodev",
+      "permanent": true
+    }
+  ]
+}
