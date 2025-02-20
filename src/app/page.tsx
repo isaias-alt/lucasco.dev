@@ -8,12 +8,11 @@ import { ResumeCard } from "@/components/resume-card";
 import Link from "next/link";
 import Markdown from "react-markdown";
 
-const BLUR_FADE_DELAY = 0.04
+const BLUR_FADE_DELAY = 0.04;
 
 export default function Home() {
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10">
-
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
           <div className="gap-2 flex justify-between">
@@ -51,11 +50,9 @@ export default function Home() {
                 Check out my latest work
               </h2>
               <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                I&apos;ve worked on a variety of projects, from simple
-                websites to complex web applications. Here are a few of my
-                favorites.
+                I&apos;ve worked on a variety of projects, from simple websites
+                to complex web applications. Here are a few of my favorites.
               </p>
-
             </div>
           </BlurFade>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
@@ -127,8 +124,6 @@ export default function Home() {
         </div>
       </section>
 
-
-
       <section id="skills">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
@@ -149,7 +144,7 @@ export default function Home() {
           <h2 className="text-2xl font-bold">About</h2>
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 4}>
-          <Markdown className="prose max-w-full text-pretty font-sans text-base text-muted-foreground dark:prose-invert">
+          <Markdown className="prose max-w-full text-pretty font-sans text-base dark:prose-invert">
             {DATA.summary}
           </Markdown>
         </BlurFade>
@@ -179,7 +174,6 @@ export default function Home() {
           </BlurFade>
         </div>
       </section>
-
     </main>
   );
 }

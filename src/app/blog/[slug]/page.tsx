@@ -94,6 +94,9 @@ export default async function Blog({
       <h1 className="title md:font-bold font-semibold md:text-5xl text-4xl tracking-tighter max-w-[650px]">
         {post.metadata.title}
       </h1>
+      <h4 className="md:text-2xl text-xl tracking-tighter py-2 text-muted-foreground opacity-80 max-w-[650px]">
+        {post.metadata.summary}
+      </h4>
       <div className="flex justify-between items-center mt-2 mb-8 text-sm max-w-[650px]">
         <Suspense fallback={<p className="h-5" />}>
           <p className="text-sm text-neutral-600 dark:text-neutral-400">
@@ -102,7 +105,7 @@ export default async function Blog({
         </Suspense>
       </div>
       <article
-        className="prose dark:prose-invert mb-12"
+        className="prose dark:prose-invert mb-12 text-lg"
         dangerouslySetInnerHTML={{ __html: post.source }}
       />
     </section>
