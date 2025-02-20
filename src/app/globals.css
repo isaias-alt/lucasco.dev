@@ -93,19 +93,19 @@
 h3 code {
   @apply !text-lg md:!text-xl;
 }
-/* Estilos existentes... */
 
-/* Estilos para código en línea */
 :not(pre) > code {
-  @apply bg-muted px-1.5 py-0.5 rounded-md font-mono text-sm relative border border-border;
+  @apply bg-muted px-1.5 py-0.5 rounded-md  border border-border;
 }
 
-/* Clase específica para código en línea */
-.inline-code {
-  @apply bg-muted px-1.5 py-0.5 rounded-md font-mono text-sm relative border border-border;
+.prose code:not(pre code) {
+  @apply bg-muted px-1.5 py-0.5 rounded-md border border-border;
+  &::before,
+  &::after {
+    display: none;
+  }
 }
 
-/* Estilos para bloques de código */
 pre {
   @apply !px-0 rounded-lg overflow-x-auto py-4 bg-muted border border-border;
 }
@@ -123,7 +123,6 @@ pre [data-highlighted-line] {
   @apply border-l-primary bg-primary/10;
 }
 
-/* Estilos para temas claro/oscuro */
 code[data-theme*=" "],
 code[data-theme*=" "] span {
   color: var(--shiki-light);
@@ -138,11 +137,14 @@ code[data-theme*=" "] span {
   }
 }
 
-/* Ajustes específicos para código en línea */
 :not(pre) > code[data-theme*=" "] {
   @apply bg-muted;
 }
 
 .dark :not(pre) > code[data-theme*=" "] {
   @apply bg-muted;
+}
+
+.prose img {
+  @apply rounded-sm; /* This adds rounded corners */
 }
