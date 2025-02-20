@@ -94,7 +94,7 @@ export default async function Blog({
       <h1 className="title md:font-bold font-semibold md:text-5xl text-4xl tracking-tighter max-w-[650px]">
         {post.metadata.title}
       </h1>
-      <h4 className="md:text-2xl text-xl tracking-tighter py-2 text-muted-foreground opacity-80 max-w-[650px]">
+      <h4 className="md:text-xl text-lg tracking-tighter py-2 text-muted-foreground opacity-80 max-w-[650px]">
         {post.metadata.summary}
       </h4>
       <div className="flex justify-between items-center mt-2 mb-8 text-sm max-w-[650px]">
