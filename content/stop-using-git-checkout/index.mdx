@@ -82,11 +82,19 @@ When we use commands with a clear purpose:
 The transition is simpler than it seems. It's like learning to use the right keyboard shortcuts, it requires conscious effort at first, but soon becomes natural:
 
 ```bash
-# Before                         # Now
-git checkout main               git switch main
-git checkout -b new-branch      git switch -c new-branch
-git checkout -- file.txt        git restore file.txt
-git checkout HEAD file.txt      git restore file.txt
+# Before
+git checkout main
+git checkout -b new-branch
+git checkout -- file.txt
+git checkout HEAD file.txt
+```
+
+```bash
+# Now
+git switch main
+git switch -c new-branch
+git restore file.txt
+git restore file.txt
 ```
 
 ## Building better habits
