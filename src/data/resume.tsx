@@ -1,13 +1,15 @@
 import { Icons } from "@/components/icons";
 import { HomeIcon, NotebookIcon, CodeIcon } from "lucide-react";
 
+export const URL = "https://lucasco.dev";
+
 export const DATA = {
   name: "Lucas Casco",
   initials: "LC",
-  url: "https://lucasco.dev",
+  url: URL,
   location: "Paraguay",
   locationLink: "https://www.google.com/maps/place/paraguay",
-  description: "Software Developer from Paraguay with +3 years of experience.",
+  description: "Software Developer from Paraguay with 4 years of experience.",
   summary:
     "My journey in programming started in **2017**, during my college years. Together with two colleagues, **i developed my first video game: a 2D platform game that managed to obtain second place in a local competition**. This experience was eye-opening, giving me my first idea of ​​the potential that technology had to create unique and exciting experiences. In 2018, motivated by the previous project, I created another video game again, which **reaffirmed my interest in software development**. However, starting college in 2019, my dedication to programming was not as deep. It was during the pandemic that I decided to take learning software development seriously, and in that process **I discovered a true passion that drove me to deepen my knowledge and skills**.",
   avatarUrl: "/me.webp",
@@ -32,28 +34,28 @@ export const DATA = {
     socials: {
       LinkedIn: {
         name: "LinkedIn",
-        url: "https://lucasco.dev/linkedin",
+        url: `${URL}/linkedin`,
         icon: Icons.linkedin,
 
         navbar: true,
       },
       GitHub: {
         name: "GitHub",
-        url: "https://lucasco.dev/github",
+        url: `${URL}/github`,
         icon: Icons.github,
 
         navbar: true,
       },
       X: {
         name: "X",
-        url: "https://lucasco.dev/x",
+        url: `${URL}/x`,
         icon: Icons.x,
 
         navbar: true,
       },
       Bluesky: {
         name: "Bluesky",
-        url: "https://lucasco.dev/bluesky",
+        url: `${URL}/bluesky`,
         icon: Icons.bluesky,
 
         navbar: true,

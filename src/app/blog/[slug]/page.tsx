@@ -3,20 +3,20 @@ import { DATA } from "@/data/resume";
 import { formatDate } from "@/lib/utils";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Suspense } from "react";
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }): Promise<Metadata | undefined> {
-  const { slug } = await Promise.resolve(params);
+  const { slug } = params;
 
   if (!slug) {
     return undefined;
   }
 
   let post = await getPost(slug);
+  if (!post) return undefined;
 
   let {
     title,
@@ -50,22 +50,10 @@ export async function generateMetadata({
   };
 }
 
-export default async function Blog({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await Promise.resolve(params);
-
-  if (!slug) {
-    notFound();
-  }
-
+export default async function Blog({ params }: { params: { slug: string } }) {
+  const { slug } = params;
   let post = await getPost(slug);
-
-  if (!post) {
-    notFound();
-  }
+  if (!post) notFound();
 
   return (
     <section id="blog">
@@ -98,11 +86,9 @@ export default async function Blog({
         {post.metadata.summary}
       </h4>
       <div className="flex justify-between items-center mt-2 mb-8 text-sm max-w-[650px]">
-        <Suspense fallback={<p className="h-5" />}>
-          <p className="text-sm text-neutral-600 opacity-80 dark:text-neutral-400">
-            {formatDate(post.metadata.publishedAt)}
-          </p>
-        </Suspense>
+        <p className="text-sm text-neutral-600 opacity-80 dark:text-neutral-400">
+          {formatDate(post.metadata.publishedAt)}
+        </p>
       </div>
       <article
         className="prose dark:prose-invert mb-12 text-[17px]"

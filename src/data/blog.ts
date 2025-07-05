@@ -1,19 +1,20 @@
 import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
+import { cache } from "react";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeStringify from "rehype-stringify";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";
 
-function getMDXDirectories(dir: string) {
+const getMDXDirectories = (dir: string) => {
   return fs
     .readdirSync(dir)
     .filter((subdir) => fs.statSync(path.join(dir, subdir)).isDirectory());
-}
+};
 
-export async function markdownToHTML(markdown: string) {
+export const markdownToHTML = async (markdown: string) => {
   const p = await unified()
     .use(remarkParse)
     .use(remarkRehype)
@@ -29,25 +30,29 @@ export async function markdownToHTML(markdown: string) {
     .process(markdown);
 
   return p.toString();
-}
+};
 
-export async function getPost(slug: string) {
-  const filePath = path.join("content", slug, "index.mdx");
-  let source = fs.readFileSync(filePath, "utf-8");
-  const { content: rawContent, data: metadata } = matter(source);
-  const content = await markdownToHTML(rawContent);
-  return {
-    source: content,
-    metadata,
-    slug,
-  };
-}
+export const getPost = cache(async (slug: string) => {
+  try {
+    const filePath = path.join("content", slug, "index.mdx");
+    const source = await fs.promises.readFile(filePath, "utf-8");
+    const { content: rawContent, data: metadata } = matter(source);
+    const content = await markdownToHTML(rawContent);
 
-async function getAllPosts(dir: string) {
+    return { source: content, metadata, slug };
+  } catch (error) {
+    console.error(`Error loading post ${slug}:`, error);
+    return null;
+  }
+});
+
+export const getAllPosts = (dir: string) => {
   const mdxDirs = getMDXDirectories(dir);
   return Promise.all(
-    mdxDirs.map(async (slug) => {
-      const { metadata, source } = await getPost(slug);
+    mdxDirs.map(async (slug: string) => {
+      const post = await getPost(slug);
+      if (!post) return null;
+      const { metadata, source } = post;
       return {
         metadata,
         slug,
@@ -55,8 +60,28 @@ async function getAllPosts(dir: string) {
       };
     })
   );
-}
+};
 
-export async function getBlogPosts() {
-  return getAllPosts(path.join(process.cwd(), "content"));
-}
+export const getBlogPosts = cache(async () => {
+  try {
+    const contentDir = path.join(process.cwd(), "content");
+    const directories = await fs.promises.readdir(contentDir);
+
+    const posts = await Promise.allSettled(
+      directories.map((slug) => getPost(slug))
+    );
+
+    return posts
+      .filter(
+        (
+          result
+        ): result is PromiseFulfilledResult<
+          NonNullable<Awaited<ReturnType<typeof getPost>>>
+        > => result.status === "fulfilled" && result.value !== null
+      )
+      .map((result) => result.value);
+  } catch (error) {
+    console.error("Error loading blog posts:", error);
+    return [];
+  }
+});
