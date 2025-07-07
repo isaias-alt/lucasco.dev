@@ -7,16 +7,13 @@ import { notFound } from "next/navigation";
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata | undefined> {
-  const { slug } = params;
+  const { slug } = await Promise.resolve(params);
 
-  if (!slug) {
-    return undefined;
-  }
-
+  if (!slug) return notFound();
   let post = await getPost(slug);
-  if (!post) return undefined;
+  if (!post) return notFound();
 
   let {
     title,
@@ -50,10 +47,15 @@ export async function generateMetadata({
   };
 }
 
-export default async function Blog({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export default async function Blog({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await Promise.resolve(params);
+  if (!slug) return notFound();
   let post = await getPost(slug);
-  if (!post) notFound();
+  if (!post) return notFound();
 
   return (
     <section id="blog">
