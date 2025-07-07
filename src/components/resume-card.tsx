@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { ChevronRightIcon } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+import React, { memo } from "react";
 
 interface ResumeCardProps {
   title: string;
@@ -16,14 +16,14 @@ interface ResumeCardProps {
   period: string;
   description?: string;
 }
-export const ResumeCard = ({
+export const ResumeCard = memo(function ResumeCard({
   title,
   subtitle,
   href,
   badges,
   period,
   description,
-}: ResumeCardProps) => {
+}: ResumeCardProps) {
   const [isExpanded, setIsExpanded] = React.useState(false);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
@@ -40,7 +40,6 @@ export const ResumeCard = ({
       onClick={handleClick}
     >
       <Card className="flex">
-
         <div className="flex-grow items-center flex-col group">
           <CardHeader>
             <div className="flex items-center justify-between gap-x-2 text-base">
@@ -93,4 +92,4 @@ export const ResumeCard = ({
       </Card>
     </Link>
   );
-};
+});

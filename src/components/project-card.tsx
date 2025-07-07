@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import Markdown from "react-markdown";
+import { memo } from "react";
 
 interface Props {
   title: string;
@@ -28,7 +29,7 @@ interface Props {
   className?: string;
 }
 
-export function ProjectCard({
+export const ProjectCard = memo(function ProjectCard({
   title,
   href,
   description,
@@ -113,4 +114,4 @@ export function ProjectCard({
       </CardFooter>
     </Card>
   );
-}
+});

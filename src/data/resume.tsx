@@ -1,10 +1,12 @@
 import { Icons } from "@/components/icons";
 import { HomeIcon, NotebookIcon, CodeIcon } from "lucide-react";
 
+export const URL = "https://lucasco.dev";
+
 export const DATA = {
   name: "Lucas Casco",
   initials: "LC",
-  url: "https://lucasco.dev",
+  url: URL,
   location: "Paraguay",
   locationLink: "https://www.google.com/maps/place/paraguay",
   description: "Software Developer from Paraguay with 4 years of experience.",
@@ -32,28 +34,28 @@ export const DATA = {
     socials: {
       LinkedIn: {
         name: "LinkedIn",
-        url: "https://lucasco.dev/linkedin",
+        url: `${URL}/linkedin`,
         icon: Icons.linkedin,
 
         navbar: true,
       },
       GitHub: {
         name: "GitHub",
-        url: "https://lucasco.dev/github",
+        url: `${URL}/github`,
         icon: Icons.github,
 
         navbar: true,
       },
       X: {
         name: "X",
-        url: "https://lucasco.dev/x",
+        url: `${URL}/x`,
         icon: Icons.x,
 
         navbar: true,
       },
       Bluesky: {
         name: "Bluesky",
-        url: "https://lucasco.dev/bluesky",
+        url: `${URL}/bluesky`,
         icon: Icons.bluesky,
 
         navbar: true,
