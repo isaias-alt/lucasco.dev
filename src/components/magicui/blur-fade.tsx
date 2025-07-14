@@ -1,6 +1,12 @@
 "use client";
 
-import { AnimatePresence, motion, useInView, UseInViewOptions, Variants } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useInView,
+  UseInViewOptions,
+  Variants,
+} from "framer-motion";
 import { useRef } from "react";
 
 type MarginType = UseInViewOptions["margin"];
@@ -16,7 +22,7 @@ interface BlurFadeProps {
   delay?: number;
   yOffset?: number;
   inView?: boolean;
-  inViewMargin?: MarginType
+  inViewMargin?: MarginType;
   blur?: string;
 }
 
@@ -60,4 +66,4 @@ const BlurFade = ({
   );
 };
 
-export default BlurFade 
+export default BlurFade;

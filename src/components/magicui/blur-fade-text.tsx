@@ -58,7 +58,7 @@ const BlurFadeText = ({
           ))}
         </AnimatePresence>
       </div>
-    )
+    );
   }
 
   return (
@@ -80,7 +80,7 @@ const BlurFadeText = ({
         </motion.span>
       </AnimatePresence>
     </div>
-  )
-}
+  );
+};
 
 export default BlurFadeText;
