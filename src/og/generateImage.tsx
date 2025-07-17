@@ -1,9 +1,4 @@
 import { ImageResponse } from "next/og";
-import { readFile } from "node:fs/promises";
-import { join } from "node:path";
-
-const interSemiBold = readFile(join(process.cwd(), "og/Inter-SemiBold.ttf"));
-const interBold = readFile(join(process.cwd(), "og/Inter-Bold.ttf"));
 
 export const size = {
   width: 1200,
@@ -19,7 +14,7 @@ export async function generateHomeImage() {
         display: "flex",
         width: "100%",
         height: "100%",
-        backgroundColor: "rgb(15, 23, 42)", // slate-900
+        backgroundColor: "rgb(15, 23, 42)",
         color: "white",
       }}
     >
@@ -80,7 +75,7 @@ export async function generatePostImage({ title }: { title: string }) {
         flexDirection: "column",
         width: "100%",
         height: "100%",
-        backgroundColor: "rgb(15, 23, 42)", // slate-900
+        backgroundColor: "rgb(15, 23, 42)",
         color: "white",
       }}
     >
@@ -148,19 +143,5 @@ export async function generatePostImage({ title }: { title: string }) {
 async function generateImage(jsx: React.ReactElement) {
   return new ImageResponse(jsx, {
     ...size,
-    fonts: [
-      {
-        name: "Inter",
-        data: await interSemiBold,
-        style: "normal",
-        weight: 600,
-      },
-      {
-        name: "Inter",
-        data: await interBold,
-        style: "normal",
-        weight: 700,
-      },
-    ],
   });
 }
