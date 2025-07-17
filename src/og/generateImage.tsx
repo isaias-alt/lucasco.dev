@@ -38,7 +38,7 @@ export async function generatePostImage({ title }: { title: string }) {
       >
         <span
           style={{
-            backgroundImage: "#12418c",
+            backgroundColor: "#12418c",
             backgroundClip: "text",
             WebkitBackgroundClip: "text",
             color: "transparent",
