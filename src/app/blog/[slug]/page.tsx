@@ -1,8 +1,15 @@
-import { getPost } from "@/data/blog";
+import { getBlogPosts, getPost } from "@/data/blog";
 import { DATA } from "@/data/resume";
 import { formatDate } from "@/lib/utils";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+
+export async function generateStaticParams() {
+  const posts = await getBlogPosts();
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
 
 export async function generateMetadata({
   params,
@@ -21,7 +28,9 @@ export async function generateMetadata({
     summary: description,
     image,
   } = post.metadata;
-  let ogImage = image ? `${DATA.url}${image}` : `${DATA.url}/og?title=${title}`;
+  let ogImage = image
+    ? `${DATA.url}${image}`
+    : `${DATA.url}/blog/${slug}/opengraph-image`;
 
   return {
     title,
@@ -72,7 +81,7 @@ export default async function Blog({
             description: post.metadata.summary,
             image: post.metadata.image
               ? `${DATA.url}${post.metadata.image}`
-              : `${DATA.url}/og?title=${post.metadata.title}`,
+              : `${DATA.url}/blog/${slug}/opengraph-image`,
             url: `${DATA.url}/blog/${slug}`,
             author: {
               "@type": "Person",
