@@ -7,6 +7,12 @@ export const size = {
 
 export const contentType = "image/png";
 
+async function generateImage(jsx: React.ReactElement) {
+  return new ImageResponse(jsx, {
+    ...size,
+  });
+}
+
 export async function generatePostImage({ title }: { title: string }) {
   return generateImage(
     <div
@@ -32,7 +38,7 @@ export async function generatePostImage({ title }: { title: string }) {
       >
         <span
           style={{
-            backgroundImage: "linear-gradient(45deg, #3b82f6, #8b5cf6)",
+            backgroundImage: "#12418c",
             backgroundClip: "text",
             WebkitBackgroundClip: "text",
             color: "transparent",
@@ -72,18 +78,11 @@ export async function generatePostImage({ title }: { title: string }) {
           flex: 1,
           paddingBottom: 30,
           lineHeight: 1.1,
-          fontWeight: 600,
+          fontWeight: 800,
         }}
       >
         {title}
       </div>
     </div>
   );
-}
-
-async function generateImage(jsx: React.ReactElement) {
-  return new ImageResponse(jsx, {
-    ...size,
-    // Sin fuentes personalizadas - usa las del sistema
-  });
 }
