@@ -22,7 +22,7 @@ export async function generatePostImage({ title }: { title: string }) {
         flexDirection: "column",
         width: "100%",
         height: "100%",
-        backgroundColor: "rgb(15, 23, 42)",
+        backgroundColor: "rgb(10, 20, 46)",
         color: "white",
       }}
     >
@@ -38,7 +38,7 @@ export async function generatePostImage({ title }: { title: string }) {
       >
         <span
           style={{
-            backgroundColor: "#12418c",
+            backgroundColor: "#305fd9",
             backgroundClip: "text",
             WebkitBackgroundClip: "text",
             color: "transparent",
@@ -78,7 +78,7 @@ export async function generatePostImage({ title }: { title: string }) {
           flex: 1,
           paddingBottom: 30,
           lineHeight: 1.1,
-          fontWeight: 800,
+          fontWeight: "bolder",
         }}
       >
         {title}
