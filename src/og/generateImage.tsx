@@ -2,6 +2,9 @@ import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 
+const interSemiBold = readFile(join(process.cwd(), "og/Inter-SemiBold.ttf"));
+const interBold = readFile(join(process.cwd(), "og/Inter-Bold.ttf"));
+
 export const size = {
   width: 1200,
   height: 630,
@@ -161,6 +164,3 @@ async function generateImage(jsx: React.ReactElement) {
     ],
   });
 }
-
-const interSemiBold = readFile(join(process.cwd(), "og/Inter-SemiBold.ttf"));
-const interBold = readFile(join(process.cwd(), "og/Inter-Bold.ttf"));
