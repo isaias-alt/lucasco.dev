@@ -52,7 +52,7 @@ export async function generateHomeImage() {
           by
           <img
             alt="Lucas Casco"
-            src="https://lucasco.dev/me.webp"
+            src="https://github.com/isaias-alt.png"
             style={{
               height: 100,
               width: 100,
