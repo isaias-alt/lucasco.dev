@@ -1,7 +1,6 @@
 import { getPost } from "@/data/blog";
 import { size, contentType, generatePostImage } from "@/og/generateImage";
 import { notFound } from "next/navigation";
-// import generateStaticParams from "./page";
 
 export const dynamic = "force-static";
 export const alt = "Lucas Casco - Blog Post";
@@ -23,5 +22,10 @@ export default async function Image({
   return generatePostImage({ title: post.metadata.title });
 }
 
-// Re-export generateStaticParams from the page to ensure consistency
-// export { generateStaticParams };
+export async function generateStaticParams() {
+  const { getBlogPosts } = await import("@/data/blog");
+  const posts = await getBlogPosts();
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}

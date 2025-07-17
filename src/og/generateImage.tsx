@@ -7,65 +7,6 @@ export const size = {
 
 export const contentType = "image/png";
 
-export async function generateHomeImage() {
-  return generateImage(
-    <div
-      style={{
-        display: "flex",
-        width: "100%",
-        height: "100%",
-        backgroundColor: "rgb(15, 23, 42)",
-        color: "white",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          fontSize: 120,
-          width: "100%",
-          height: "100%",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: 60,
-        }}
-      >
-        <span
-          style={{
-            backgroundImage: "linear-gradient(45deg, #3b82f6, #8b5cf6)",
-            backgroundClip: "text",
-            WebkitBackgroundClip: "text",
-            color: "transparent",
-          }}
-        >
-          lucasco.dev
-        </span>
-        <span
-          style={{
-            fontFamily: "Inter",
-            fontSize: 48,
-            alignItems: "center",
-            display: "flex",
-            gap: 20,
-          }}
-        >
-          by
-          <img
-            alt="Lucas Casco"
-            src="https://github.com/isaias-alt.png"
-            style={{
-              height: 100,
-              width: 100,
-              borderRadius: "50%",
-              marginLeft: 10,
-            }}
-          />
-        </span>
-      </div>
-    </div>
-  );
-}
-
 export async function generatePostImage({ title }: { title: string }) {
   return generateImage(
     <div
@@ -113,7 +54,7 @@ export async function generatePostImage({ title }: { title: string }) {
           by
           <img
             alt="Lucas Casco"
-            src="https://lucasco.dev/me.webp"
+            src="https://github.com/isaias-alt.png"
             style={{
               height: 60,
               width: 60,
@@ -143,5 +84,6 @@ export async function generatePostImage({ title }: { title: string }) {
 async function generateImage(jsx: React.ReactElement) {
   return new ImageResponse(jsx, {
     ...size,
+    // Sin fuentes personalizadas - usa las del sistema
   });
 }
