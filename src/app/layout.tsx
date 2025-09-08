@@ -6,6 +6,8 @@ import type { Metadata } from "next";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import "./globals.css";
 import Navbar from "@/components/navbar";
+import { GoogleAnalytics } from "@/components/google-analytics";
+import { MEASUREMENT_ID } from "@/config/config";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -79,6 +81,7 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
+        {MEASUREMENT_ID && <GoogleAnalytics ga_id={MEASUREMENT_ID} />}
         <ThemeProvider attribute="class" defaultTheme="dark">
           <TooltipProvider delayDuration={0}>
             {children}
