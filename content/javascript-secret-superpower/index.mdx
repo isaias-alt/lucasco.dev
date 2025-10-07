@@ -1,6 +1,6 @@
 ---
 title: "The Event Loop: JavaScript's Secret Superpower"
-publishedAt: "2025-07-10"
+publishedAt: "2025-10-07"
 summary: "Why JavaScript feels concurrent despite being single-threaded"
 ---
 
@@ -23,8 +23,6 @@ When you're writing JavaScript, you're actually working with several moving part
 
 But the magic happens when we add the browser's Web APIs and the Event Loop into the mix.
 
-![JavaScript Engine](/blog/javascript-secret-superpower/javascript-engine.webp)
-
 ## A Kitchen Analogy
 
 Imagine our chef (the Call Stack) cooking in a restaurant. They can only prepare one dish at a time, but they have help:
@@ -32,6 +30,8 @@ Imagine our chef (the Call Stack) cooking in a restaurant. They can only prepare
 - **Prep cooks (Web APIs)**: Handle time-consuming tasks like baking or marinating outside the main kitchen.
 - **The expeditor (Event Loop)**: Checks if dishes are ready and brings them back to the chef.
 - **The pass (Callback Queue)**: Where completed dishes wait before being plated.
+
+![JavaScript Engine](/blog/javascript-secret-superpower/javascript-engine.webp)
 
 This is exactly how JavaScript works.
 
@@ -91,7 +91,7 @@ Even though `setTimeout` has zero delay, the promise executes first. The Event L
 
 ## Why This Matters
 
-Understanding the Event Loop isn't just theoretical knowledge—it transforms how you write code. You'll know why:
+Understanding the Event Loop isn't just theoretical knowledge, it transforms how you write code. You'll know why:
 
 - Long-running synchronous code blocks your entire application
 - Promises resolve before setTimeout callbacks
@@ -106,10 +106,10 @@ The Event Loop is what creates the illusion of parallelism.
 
 ## Practical Takeaway
 
-Next time you write asynchronous code, visualize that kitchen. Your function isn't "waiting"—it's been delegated. The Call Stack is free to do other work. And the Event Loop? It's the tireless coordinator making sure everything comes together at the right moment.
+Next time you write asynchronous code, visualize that kitchen. Your function isn't "waiting", it's been delegated. The Call Stack is free to do other work. And the Event Loop? It's the tireless coordinator making sure everything comes together at the right moment.
 
 That's the beauty of JavaScript's concurrency model. Simple, elegant, and surprisingly powerful.
 
 ---
 
-_The Event Loop isn't just a technical detail—it's the heartbeat of every JavaScript application you'll ever write._
+_The Event Loop isn't just a technical detail, it's the heartbeat of every JavaScript application you'll ever write._
