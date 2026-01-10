@@ -65,7 +65,7 @@ export const DATA = {
 
   work: [
     {
-      company: "SODEP",
+      company: "SODEP S.A.",
       href: "https://sodep.com.py/",
       badges: [],
       location: "Remote",
@@ -74,7 +74,7 @@ export const DATA = {
       start: "Nov 2024",
       end: "Present",
       description:
-        "Responsible for creating dynamic and user-friendly interfaces and streamlining the development process",
+        "Currently, I work as a frontend developer, specialized in Next.js, React.js, TypeScript and TailwindCSS to create scalable and optimized interfaces. My responsibilities include implementing and improving functionalities, documenting code following good practices, complying with quality conventions, and resolving technical issues. I work as a team using Kanban methodologies and helping to accelerate the progress of the project since I joined.",
     },
     {
       company: "Freelance",
@@ -86,10 +86,70 @@ export const DATA = {
       start: "Jun 2021",
       end: "Nov 2024",
       description:
-        "For the last few years, I have worked as a freelance frontend developer, specializing in creating frontend technologies that allow companies and businesses to showcase and market their products with exceptional effectiveness.",
+        "I have worked as a freelancer offering solutions to help companies and businesses display and market their products effectively.",
     },
   ],
   projects: [
+    {
+      title: "Creacionix AI",
+      href: "https://creacionix-ai.vercel.app/",
+      dates: "Nov 2024 - Nov 2024",
+      active: true,
+      description:
+        "Creacionix AI is a web application that uses generative AI to generate content based on user input.",
+      technologies: [
+        "Next.js",
+        "Gemini API",
+        "Typescript",
+        "Shadcn/ui",
+        "Drizzle",
+        "Clerk",
+        "Neon",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://creacionix-ai.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "https://github.com/isaias-alt/creacionix-ai",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/projects/creacionix-ai.webp",
+      video: "",
+    },
+    {
+      title: "Format-X",
+      href: "https://format-your-x.vercel.app/",
+      dates: "Aug 2025 - Aug 2025",
+      active: true,
+      description:
+        "Format-X is a powerful tool for converting between different data formats: JSON, XML, YAML, CSV, and plain text.",
+      technologies: [
+        "Next.js",
+        "Typescript",
+        "Shadcn/ui",
+        "Monaco Editor",
+        "TailwindCSS",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://format-your-x.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "https://github.com/isaias-alt/format-x",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/projects/format-x.webp",
+      video: "",
+    },
     {
       title: "CodeQuizz",
       href: "https://code-quizz.vercel.app/",
@@ -153,10 +213,10 @@ export const DATA = {
     },
     {
       school: `Colegio Nacional "Prof.: Luciano Bordón"`,
-      href: "https://datos.mec.gov.py/doc/establecimientos/0807003",
+      href: "",
       degree: "Informatic Technician",
       start: "2016",
-      end: "2019",
+      end: "2018",
     },
   ],
 } as const;
