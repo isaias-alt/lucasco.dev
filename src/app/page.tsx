@@ -13,6 +13,7 @@ const BLUR_FADE_DELAY = 0.04;
 export default function Home() {
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10">
+      {/* Hero Section */}
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
           <div className="gap-2 flex justify-between">
@@ -39,6 +40,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Projects Section */}
       <section id="projects">
         <div className="space-y-12 w-full py-8">
           <BlurFade delay={BLUR_FADE_DELAY * 11}>
@@ -78,6 +80,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Work Section */}
       <section id="work">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
@@ -102,6 +105,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Education Section */}
       <section id="education">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 7}>
@@ -123,7 +127,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-
+      {/* Skills Section */}
       <section id="skills">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
@@ -139,6 +143,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* About Section */}
       <section id="about">
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
           <h2 className="text-2xl font-bold">About</h2>
@@ -150,6 +155,7 @@ export default function Home() {
         </BlurFade>
       </section>
 
+      {/* Contact Section */}
       <section id="contact">
         <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 16}>

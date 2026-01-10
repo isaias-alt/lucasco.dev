@@ -1,10 +1,10 @@
+import "./globals.css";
 import { Inter as FontSans } from "next/font/google";
 import { DATA } from "@/data/resume";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import "./globals.css";
 import Navbar from "@/components/navbar";
 import { GoogleAnalytics } from "@/components/google-analytics";
 import { MEASUREMENT_ID } from "@/config/config";
