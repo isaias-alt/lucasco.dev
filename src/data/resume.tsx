@@ -11,7 +11,7 @@ export const DATA = {
   locationLink: "https://www.google.com/maps/place/paraguay",
   description: "Software Developer from Paraguay with 4 years of experience.",
   summary:
-    "My journey in programming started in **2017**, during my college years. Together with two colleagues, **i developed my first video game: a 2D platform game that managed to obtain second place in a local competition**. This experience was eye-opening, giving me my first idea of ​​the potential that technology had to create unique and exciting experiences. In 2018, motivated by the previous project, I created another video game again, which **reaffirmed my interest in software development**. However, starting college in 2019, my dedication to programming was not as deep. It was during the pandemic that I decided to take learning software development seriously, and in that process **I discovered a true passion that drove me to deepen my knowledge and skills**.",
+    "My journey in programming started in **2017**, during my college years. Together with two colleagues, **i developed my first video game: a 2D platform game that managed to obtain second place in a national competition**. This experience was eye-opening, giving me my first idea of ​​the potential that technology had to create unique and exciting experiences. In 2018, motivated by the previous project, I created another video game again, which **reaffirmed my interest in software development**. However, starting college in 2019, my dedication to programming was not as deep. It was during the pandemic that I decided to take learning software development seriously, and in that process **I discovered a true passion that drove me to deepen my knowledge and skills**.",
   avatarUrl: "/me.webp",
   skills: [
     "Next.js",
@@ -67,10 +67,7 @@ export const DATA = {
     {
       company: "SODEP S.A.",
       href: "https://sodep.com.py/",
-      badges: [],
-      location: "Remote",
-      title: "Frontend Web Developer",
-      logoUrl: "",
+      title: "Software Developer",
       start: "Nov 2024",
       end: "Present",
       description:
@@ -79,10 +76,7 @@ export const DATA = {
     {
       company: "Freelance",
       href: "",
-      badges: [],
-      location: "Remote",
       title: "Fullstack Developer",
-      logoUrl: "",
       start: "Jun 2021",
       end: "Nov 2024",
       description:
@@ -206,14 +200,12 @@ export const DATA = {
   education: [
     {
       school: "Universidad Católica Nuestra Señora de la Asunción",
-      href: "https://www.universidadcatolica.edu.py/",
       degree: "Engineering Informatic",
       start: "2019",
       end: "Current",
     },
     {
       school: `Colegio Nacional "Prof.: Luciano Bordón"`,
-      href: "",
       degree: "Informatic Technician",
       start: "2016",
       end: "2018",
