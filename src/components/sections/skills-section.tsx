@@ -1,8 +1,7 @@
 import BlurFade from "@/components/magicui/blur-fade";
 import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
-
-const BLUR_FADE_DELAY = 0.04;
+import { BLUR_FADE_DELAY, getBlurFadeDelay } from "@/lib/constants";
 
 export function SkillsSection() {
   return (
@@ -13,7 +12,7 @@ export function SkillsSection() {
         </BlurFade>
         <div className="flex flex-wrap gap-1">
           {DATA.skills.map((skill, id) => (
-            <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
+            <BlurFade key={skill} delay={getBlurFadeDelay(10, id)}>
               <Badge key={skill}>{skill}</Badge>
             </BlurFade>
           ))}

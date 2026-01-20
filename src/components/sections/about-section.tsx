@@ -1,8 +1,7 @@
 import BlurFade from "@/components/magicui/blur-fade";
 import { DATA } from "@/data/resume";
 import Markdown from "react-markdown";
-
-const BLUR_FADE_DELAY = 0.04;
+import { BLUR_FADE_DELAY } from "@/lib/constants";
 
 export function AboutSection() {
   return (

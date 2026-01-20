@@ -1,8 +1,7 @@
 import BlurFade from "@/components/magicui/blur-fade";
 import { WorkCard } from "@/components/work-card";
 import { DATA } from "@/data/resume";
-
-const BLUR_FADE_DELAY = 0.04;
+import { BLUR_FADE_DELAY, getBlurFadeDelay } from "@/lib/constants";
 
 export function WorkSection() {
   return (
@@ -12,7 +11,7 @@ export function WorkSection() {
           <h2 className="text-2xl font-bold">Work Experience</h2>
         </BlurFade>
         {DATA.work.map((work, id) => (
-          <BlurFade key={work.company} delay={BLUR_FADE_DELAY * 6 + id * 0.05}>
+          <BlurFade key={work.company} delay={getBlurFadeDelay(6, id)}>
             <WorkCard
               key={work.company}
               position={work.title}

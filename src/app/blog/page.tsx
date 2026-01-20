@@ -1,13 +1,12 @@
 import BlurFade from "@/components/magicui/blur-fade";
 import { getBlogPosts } from "@/data/blog";
 import Link from "next/link";
+import { BLUR_FADE_DELAY, getBlurFadeDelay } from "@/lib/constants";
 
 export const metadata = {
   title: "Blog",
   description: "My thoughts on software development, life, and more.",
 };
-
-const BLUR_FADE_DELAY = 0.04;
 
 export default async function BlogPage() {
   const posts = await getBlogPosts();
@@ -27,7 +26,7 @@ export default async function BlogPage() {
           return 1;
         })
         .map((post, id) => (
-          <BlurFade delay={BLUR_FADE_DELAY * 2 + id * 0.05} key={post.slug}>
+          <BlurFade delay={getBlurFadeDelay(2, id)} key={post.slug}>
             <Link
               className="flex flex-col space-y-1 mb-4"
               href={`/blog/${post.slug}`}

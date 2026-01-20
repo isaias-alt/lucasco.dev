@@ -1,8 +1,7 @@
 import BlurFade from "@/components/magicui/blur-fade";
 import { EducationCard } from "@/components/education-card";
 import { DATA } from "@/data/resume";
-
-const BLUR_FADE_DELAY = 0.04;
+import { BLUR_FADE_DELAY, getBlurFadeDelay } from "@/lib/constants";
 
 export function EducationSection() {
   return (
@@ -14,7 +13,7 @@ export function EducationSection() {
         {DATA.education.map((education, id) => (
           <BlurFade
             key={education.school}
-            delay={BLUR_FADE_DELAY * 8 + id * 0.05}
+            delay={getBlurFadeDelay(8, id)}
           >
             <EducationCard
               key={education.school}

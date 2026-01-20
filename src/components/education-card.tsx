@@ -2,6 +2,7 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardHeader } from "@/components/ui/card";
+import { TimelineIndicator } from "@/components/ui/timeline-indicator";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import React, { memo } from "react";
@@ -36,10 +37,7 @@ export const EducationCard = memo(function EducationCard({
       <div className="flex-grow items-center flex-col group">
         <CardHeader>
           <div className="flex gap-3">
-            <div className="flex flex-col items-center">
-              <div className="w-2 h-2 rounded-full bg-blue-500 mt-1.5" />
-              <div className="w-px flex-1 bg-border" />
-            </div>
+            <TimelineIndicator />
             <div className="flex-1 space-y-1 pb-1">
               <div className="flex items-center justify-between gap-x-2 text-base">
                 <h3 className="inline-flex items-center justify-center font-semibold leading-none text-xs sm:text-sm">

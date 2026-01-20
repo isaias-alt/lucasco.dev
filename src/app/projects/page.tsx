@@ -1,13 +1,12 @@
 import BlurFade from "@/components/magicui/blur-fade"
 import { ProjectCard } from "@/components/project-card"
 import { DATA } from "@/data/resume"
+import { BLUR_FADE_DELAY, getBlurFadeDelay } from "@/lib/constants"
 
 export const metadata = {
   title: "Projects",
   description: "My projects and open source contributions.",
 };
-
-const BLUR_FADE_DELAY = 0.04
 
 const ProjectPage = () => {
   return (
@@ -32,7 +31,7 @@ const ProjectPage = () => {
             {DATA.projects.map((project, id) => (
               <BlurFade
                 key={project.title}
-                delay={BLUR_FADE_DELAY * 12 + id * 0.05}
+                delay={getBlurFadeDelay(12, id)}
               >
                 <ProjectCard
                   href={project.href}
