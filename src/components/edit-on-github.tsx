@@ -1,10 +1,6 @@
 import { Icons } from "./icons";
 
-interface EditOnGitHubProps {
-  slug: string;
-}
-
-export function EditOnGitHub({ slug }: EditOnGitHubProps) {
+export function EditOnGitHub({ slug }: { slug: string }) {
   return (
     <a
       href={`https://github.com/isaias-alt/lucasco.dev/blob/main/content/${slug}/index.mdx`}
