@@ -1,3 +1,4 @@
+import { EditOnGitHub } from "@/components/edit-on-github";
 import { getBlogPosts, getPost } from "@/data/blog";
 import { DATA } from "@/data/resume";
 import { formatDate } from "@/lib/utils";
@@ -102,9 +103,11 @@ export default async function Blog({
         </p>
       </div>
       <article
-        className="prose dark:prose-invert mb-12 text-[17px]"
+        className="prose dark:prose-invert mb-8 text-[17px]"
         dangerouslySetInnerHTML={{ __html: post.source }}
       />
+      <hr className="my-8 border-neutral-200 dark:border-neutral-800" />
+      <EditOnGitHub slug={slug} />
     </section>
   );
 }
