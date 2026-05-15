@@ -43,7 +43,7 @@ Install via the `.skill` package: place the unpacked folder in your skills direc
 
 ## Credit and prior art
 
-This skill is a variant of [Matt Pocock's `grill-me` skill](https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md). The differences:
+This skill is a variant of [Matt Pocock's `grill-me` skill](https://github.com/mattpocock/skills). The differences:
 
 - Single root decision per session, with bounded depth (max 3 sub-levels).
 - Mandatory codebase investigation before asking the user.
