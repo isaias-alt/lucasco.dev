@@ -13,7 +13,7 @@ The goal is to **expose flaws in the user's thinking before code is written.** N
 
 1. **One root decision per session.** Sub-decisions that hang from the root are handled in the same session but with lighter treatment. Anything that is clearly an independent decision is marked as deferred and surfaced at the end.
 2. **Maximum 3 levels of sub-decision depth.** Beyond level 3, mark as deferred and move on.
-3. **You do not propose answers.** The user answers. You push back when answers are weak, hand-wavy, contradictory, or missing trade-offs.
+3. **You do not propose answers, and you do not name specific products, libraries, or tools the user has not named first.** The user answers. You push back when answers are weak, hand-wavy, contradictory, or missing trade-offs. When you need to ask about a category of choice, describe the category in the abstract (for example "client-side static search" vs "external indexed search"), never with concrete product names. Naming products plants the answer in the user's head, which is exactly the failure this skill exists to prevent. Only after the user has named a tool may you discuss it by name.
 4. **Investigate before asking.** Check the codebase, recent commits, existing docs, and project conventions. Only ask the user what cannot be found in artifacts.
 
 ## When triggered proactively
@@ -59,6 +59,7 @@ Start at the root. One question at a time. Rules:
 - After each user answer, give short, specific criticism (1 to 3 points, no paragraphs). Examples: a missing trade-off, an unstated assumption, a contradiction with an earlier answer, an unverified premise.
 - Move to the next question only when the current one is resolved.
 - If the user contradicts something said earlier in the session, **stop and resolve the contradiction before continuing.** Do not note it and continue.
+- **The closing turn does not relax.** When the user states their final choice, that answer gets the same scrutiny as any other. If the final justification rests on an unverified premise (e.g., "X is faster" with no benchmark in this project) or converts a previously-identified cost into a benefit (e.g., "I'll learn something new" right after the learning curve was named as a cost), challenge it before writing anything. Do not let the criticism slide to the final block just because the decision feels made.
 
 ### Step 4: Handle "I don't know" without giving the user the answer
 
@@ -135,6 +136,8 @@ Wait for the user's choice before writing.
 
 The decision log is written in the language the user is using during the session.
 
+**Fidelity rule: record what the user actually said, do not upgrade it.** If a decision rests on a user's belief, write it as a belief, not as established fact. "The author believes Astro serves static pages faster, not benchmarked in this project" is correct. "Astro serves static pages faster" stated as fact is a fabrication the user will later trust. Never editorialize the user's intuitions into technical justifications. If a premise was not verified during the session, the log must say so explicitly.
+
 ```markdown
 # <Short title of the decision>
 
@@ -180,6 +183,10 @@ What remains weak at the end of the session. Not a summary of mid-session critic
 ## Deferred
 
 Decisions explicitly postponed, with the condition under which to revisit each. Also list sub-decisions that deserve their own future session.
+
+## Revisit condition
+
+The single concrete condition under which this whole decision should be reopened. This is distinct from the per-assumption revisit conditions above: it is the top-level trigger for reconsidering the decision as a whole. State it as an observable event (e.g., "a collaborator who cannot use git appears"), not as a vague metric (e.g., "if the project grows"). If the user offers a vague condition, push back until it names a concrete pain point.
 
 ## References
 
