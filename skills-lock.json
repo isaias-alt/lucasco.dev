@@ -13,6 +13,12 @@
       "skillPath": "skills/next-best-practices/SKILL.md",
       "computedHash": "f4678aef4ffc10a5ea64a91e57abe5a5081af813b06d58d565caf3e8ef56e26c"
     },
+    "socratic-duck": {
+      "source": "isaias-alt/skills",
+      "sourceType": "github",
+      "skillPath": "socratic-duck/SKILL.md",
+      "computedHash": "356b5559fa61b5f3d387117f68bd623cb57ad0d20ac8d26abdcba4c7b023554a"
+    },
     "vercel-react-best-practices": {
       "source": "vercel-labs/agent-skills",
       "sourceType": "github",
