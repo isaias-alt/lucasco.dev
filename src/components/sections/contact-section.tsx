@@ -1,32 +1,32 @@
-import BlurFade from "@/components/magicui/blur-fade";
-import { DATA } from "@/data/resume";
-import Link from "next/link";
-import { BLUR_FADE_DELAY } from "@/lib/constants";
+import { SectionLabel } from "@/components/section-label";
+import { resume } from "@/data/resume";
 
 export function ContactSection() {
   return (
-    <section id="contact">
-      <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
-        <BlurFade delay={BLUR_FADE_DELAY * 16}>
-          <div className="space-y-3">
-            <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-              Contact
-            </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-              Get in Touch
-            </h2>
-            <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Want to chat? Just shoot me a dm{" "}
-              <Link
-                href={DATA.contact.socials.LinkedIn.url}
-                className="text-blue-500 hover:underline"
-              >
-                with a direct question on LinkedIn
-              </Link>{" "}
-              and I&apos;ll respond as soon as possible.
-            </p>
-          </div>
-        </BlurFade>
+    <section id="contact" className="py-[clamp(48px,8vh,80px)]">
+      <SectionLabel index="06" title="Get in Touch" />
+      <h3 className="mb-3.5 font-display text-[clamp(28px,5vw,44px)] font-extrabold tracking-[-0.03em] text-bone">
+        {resume.contactHeadline}
+      </h3>
+      <p className="mb-7 max-w-[48ch] text-base text-fog">
+        {resume.contactSub}
+      </p>
+      <div className="grid grid-cols-1 border-t border-line sm:grid-cols-2">
+        {resume.contact.map((link) => {
+          const isExternal = link.href.startsWith("http");
+          return (
+            <a
+              key={link.label}
+              href={link.href}
+              target={isExternal ? "_blank" : undefined}
+              rel={isExternal ? "noopener noreferrer" : undefined}
+              className="flex items-center justify-between gap-4 border-b border-line py-4 pr-5 font-mono text-sm text-bone transition-colors duration-150 hover:text-steel"
+            >
+              {link.label}
+              <span className="text-fog">{link.hint}</span>
+            </a>
+          );
+        })}
       </div>
     </section>
   );

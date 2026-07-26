@@ -1,46 +1,15 @@
-import BlurFade from "@/components/magicui/blur-fade";
 import { ProjectCard } from "@/components/project-card";
-import { DATA } from "@/data/resume";
-import { BLUR_FADE_DELAY, getBlurFadeDelay } from "@/lib/constants";
+import { SectionLabel } from "@/components/section-label";
+import { resume } from "@/data/resume";
 
 export function ProjectsSection() {
   return (
-    <section id="projects">
-      <div className="space-y-12 w-full py-8">
-        <BlurFade delay={BLUR_FADE_DELAY * 11}>
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-              My Projects
-            </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-              Check out my <span className="text-blue-500">latest</span> work
-            </h2>
-            <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              I&apos;ve worked on a variety of projects, from simple websites
-              to complex web applications. Here are a few of my favorites.
-            </p>
-          </div>
-        </BlurFade>
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
-          {DATA.projects.map((project, id) => (
-            <BlurFade
-              key={project.title}
-              delay={getBlurFadeDelay(12, id)}
-            >
-              <ProjectCard
-                href={project.href}
-                key={project.title}
-                title={project.title}
-                description={project.description}
-                dates={project.dates}
-                tags={project.technologies}
-                image={project.image}
-                video={project.video}
-                links={project.links}
-              />
-            </BlurFade>
-          ))}
-        </div>
+    <section id="projects" className="py-[clamp(48px,8vh,80px)]">
+      <SectionLabel index="02" title="Projects" />
+      <div className="grid grid-cols-1 gap-px overflow-hidden rounded border border-line bg-line">
+        {resume.projects.map((project) => (
+          <ProjectCard key={project.name} project={project} />
+        ))}
       </div>
     </section>
   );

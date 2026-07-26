@@ -8,10 +8,10 @@ import { ContactSection } from "@/components/sections/contact-section";
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-[100dvh] space-y-10">
+    <main className="flex min-h-[100dvh] flex-col">
       <HeroSection />
-      <ProjectsSection />
       <WorkSection />
+      <ProjectsSection />
       <EducationSection />
       <SkillsSection />
       <AboutSection />
