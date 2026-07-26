@@ -53,10 +53,10 @@ export type Resume = {
 export const resume: Resume = {
   name: "Lucas Casco",
   greeting: "Hey, I'm Lucas.",
-  headline: "Software engineer.\n{{TODO: reemplazar 'I ship the whole thing.'}}",
+  headline: "Software engineer.",
   summary:
     "I work across the stack on **banking and fintech** products in production, and I build and ship my own **SaaS** end to end. From the database to the PDF the user downloads.",
-  meta: ["Paraguay / Remote", "4+ years", "{{TODO: reemplazar 'Open to mid-level roles'}}"],
+  meta: ["Paraguay / Remote", "4+ years"],
   experience: [
     {
       role: "Software Developer",
@@ -98,10 +98,8 @@ export const resume: Resume = {
       description:
         "Patient records, anthropometric tracking, meal-plan builder and PDF export for nutrition professionals. I own every layer: data model, API, interface, deploy.",
       stack: ["Next.js", "Nest.js", "PostgreSQL", "Prisma"],
-      links: [
-        { label: "Website", href: "https://nutrione.com.py" },
-        { label: "Source", href: "{{TODO: repo URL o privado}}" },
-      ],
+      image: "/projects/nutrione.webp",
+      links: [{ label: "Website", href: "https://nutrione.com.py" }],
     },
     {
       name: "socratic-duck",
@@ -110,7 +108,9 @@ export const resume: Resume = {
       description:
         "An agent skill that pressure-tests architectural decisions before you commit to them, through Socratic questioning, and writes a structured decision log.",
       stack: ["Claude Code", "skills.sh"],
+      image: "/projects/socratic-duck.webp",
       links: [
+        { label: "Website", href: "https://skills.lucasco.dev" },
         { label: "Source", href: "https://github.com/isaias-alt/skills" },
       ],
     },
