@@ -2,6 +2,7 @@
   "name": "lucasco.dev",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@11.14.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -32,11 +33,5 @@
     "postcss": "8.4.47",
     "tailwindcss": "3.4.14",
     "typescript": "5.6.3"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "sharp",
-      "unrs-resolver"
-    ]
   }
 }
