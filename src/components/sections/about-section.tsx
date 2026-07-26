@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { SectionLabel } from "@/components/section-label";
 import { resume } from "@/data/resume";
 import { renderWithBold } from "@/lib/render-with-bold";
@@ -7,8 +8,14 @@ export function AboutSection() {
     <section id="about" className="py-[clamp(48px,8vh,80px)]">
       <SectionLabel index="05" title="About" />
       <div className="grid grid-cols-1 items-start gap-5 sm:grid-cols-[130px_1fr] sm:gap-8">
-        <div className="flex h-[130px] w-[130px] items-center justify-center rounded-[3px] border border-line bg-surface-2 p-2 text-center font-mono text-[10px] text-steel-dim">
-          [ PHOTO ]
+        <div className="relative h-[130px] w-[130px] overflow-hidden rounded-[3px] border border-line bg-surface-2">
+          <Image
+            src={resume.avatar}
+            alt={resume.name}
+            width={130}
+            height={130}
+            className="h-full w-full object-cover"
+          />
         </div>
         <div>
           {resume.about.map((paragraph, i) => (

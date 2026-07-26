@@ -1,11 +1,25 @@
+import Image from "next/image";
 import type { Project } from "@/data/resume";
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
     <article className="grid grid-cols-1 bg-bg sm:grid-cols-[200px_1fr]">
-      <div className="flex aspect-video items-center justify-center border-b border-line bg-surface-2 p-2.5 text-center font-mono text-[11px] text-steel-dim sm:aspect-[16/10] sm:border-b-0 sm:border-r">
-        [ SCREENSHOT {project.name} ]
-      </div>
+      {project.image ? (
+        <div className="relative aspect-video overflow-hidden border-b border-line sm:aspect-[16/10] sm:border-b-0 sm:border-r">
+          <Image
+            src={project.image}
+            alt={`${project.name} screenshot`}
+            fill
+            sizes="(min-width: 640px) 200px, 100vw"
+            className="object-cover"
+            style={{ objectPosition: project.imagePosition ?? "center" }}
+          />
+        </div>
+      ) : (
+        <div className="flex aspect-video items-center justify-center border-b border-line bg-surface-2 p-2.5 text-center font-mono text-[11px] text-steel-dim sm:aspect-[16/10] sm:border-b-0 sm:border-r">
+          [ SCREENSHOT {project.name} ]
+        </div>
+      )}
       <div className="flex flex-col px-6 py-[22px]">
         <div className="mb-1.5 flex items-baseline justify-between gap-2">
           <span className="font-display text-[21px] font-bold text-bone">

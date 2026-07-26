@@ -21,7 +21,8 @@ export type Project = {
   tag: string;
   description: string;
   stack: string[];
-  image: string; // ruta en /public
+  image?: string; // ruta en /public; ausente hasta que exista el asset
+  imagePosition?: string; // CSS object-position; default "center"
   links: Link[];
 };
 
@@ -97,7 +98,6 @@ export const resume: Resume = {
       description:
         "Patient records, anthropometric tracking, meal-plan builder and PDF export for nutrition professionals. I own every layer: data model, API, interface, deploy.",
       stack: ["Next.js", "Nest.js", "PostgreSQL", "Prisma"],
-      image: "/projects/nutrione.png",
       links: [
         { label: "Website", href: "https://nutrione.com.py" },
         { label: "Source", href: "{{TODO: repo URL o privado}}" },
@@ -110,7 +110,6 @@ export const resume: Resume = {
       description:
         "An agent skill that pressure-tests architectural decisions before you commit to them, through Socratic questioning, and writes a structured decision log.",
       stack: ["Claude Code", "skills.sh"],
-      image: "/projects/socratic-duck.png",
       links: [
         { label: "Source", href: "https://github.com/isaias-alt/skills" },
       ],
@@ -122,7 +121,8 @@ export const resume: Resume = {
       description:
         "Convert between JSON, XML, YAML, CSV and plain text in the browser, with a live editor.",
       stack: ["Next.js", "Monaco", "TypeScript"],
-      image: "/projects/format-x.png",
+      image: "/projects/format-x.webp",
+      imagePosition: "20% center",
       links: [
         { label: "Demo", href: "https://format-your-x.vercel.app/" },
         { label: "Source", href: "https://github.com/isaias-alt/format-x" },
@@ -135,7 +135,7 @@ export const resume: Resume = {
       description:
         "Content generation from user input, built on the Gemini API.",
       stack: ["Next.js", "Gemini", "Drizzle"],
-      image: "/projects/creacionix.png",
+      image: "/projects/creacionix-ai.webp",
       links: [
         { label: "Demo", href: "https://creacionix-ai.vercel.app/" },
         {
@@ -177,7 +177,7 @@ export const resume: Resume = {
     "I got into programming in **2017**, building a 2D platformer with two classmates that took **second place at a national contest**. That was the moment it clicked: software could make things people actually want to use.",
     "I took it seriously during the pandemic and haven't stopped since. Outside the editor I'm self-taught in philosophy and pulled toward cinema. I think about systems the way you'd think about a cut: get the structure right first, then worry about the rhythm.",
   ],
-  avatar: "/avatar.jpg",
+  avatar: "/me.webp",
   contactHeadline: "Let's talk.",
   contactSub:
     "Open to mid-level fullstack roles, remote. The fastest way to reach me is a direct message.",

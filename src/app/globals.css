@@ -20,7 +20,7 @@ html {
     --surface-2: #1a1e22;
     --fog: #8a9099;
     --bone: #e8e6e1;
-    --steel: #5b7a99;
+    --steel: #6284a5;
     --steel-dim: #3e5468;
     --line: #23282d;
 
@@ -34,7 +34,7 @@ html {
     --popover: 210 13% 12%;
     --popover-foreground: 43 13% 90%;
 
-    --primary: 210 25% 48%;
+    --primary: 210 27% 52%;
     --primary-foreground: 210 12% 6%;
 
     --secondary: 210 13% 12%;
@@ -78,7 +78,7 @@ html {
     --popover: 210 13% 12%;
     --popover-foreground: 43 13% 90%;
 
-    --primary: 210 25% 48%;
+    --primary: 210 27% 52%;
     --primary-foreground: 210 12% 6%;
 
     --secondary: 210 13% 12%;
