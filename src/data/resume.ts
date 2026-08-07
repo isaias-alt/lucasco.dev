@@ -61,31 +61,31 @@ export const resume: Resume = {
     {
       role: "Software Developer",
       company: "SODEP S.A.",
-      period: "Nov 2024 — Present",
+      period: "Nov 2024 - Present",
       intro:
         "Building production software for banking and fintech clients across the stack.",
       projects: [
         {
-          name: 'Aquí Pago — "Mi Tienda" module',
+          name: 'Aquí Pago - "Mi Tienda" module',
           description:
             "Shipped a new Next.js module as a microfrontend inside an existing PHP app, with a shared session between both so users move between them without logging in again. Built stock management and payment collection.",
         },
         {
-          name: "Banco Basa — Banking CRM",
+          name: "Banco Basa - Banking CRM",
           description:
             "Client onboarding, account creation and card issuance. Built a Fastify proxy between the CRM and the bank's APIs that handles authentication and the encryption/decryption layer for requests and responses, and used Redis idempotency keys so critical onboarding flows are safe to retry.",
         },
         {
-          name: "Banco Interfisa — Business Banking Web",
+          name: "Banco Interfisa - Business Banking Web",
           description:
             "Frontend for high-complexity business banking flows: loan payments, receipt history and supplier management. Delivered on the committed timeline.",
         },
       ],
     },
     {
-      role: "Fullstack Developer — Freelance",
+      role: "Fullstack Developer - Freelance",
       company: "Independent",
-      period: "2021 — 2024",
+      period: "2021 - 2024",
       intro:
         "Web solutions for clients across different domains, under NDA. React, Next.js and Node.js.",
     },
@@ -93,7 +93,7 @@ export const resume: Resume = {
   projects: [
     {
       name: "NutriOne",
-      year: "2024 — present",
+      year: "2024 - present",
       tag: "Clinical SaaS · built solo, end to end",
       description:
         "Patient records, anthropometric tracking, meal-plan builder and PDF export for nutrition professionals. I own every layer: data model, API, interface, deploy.",
@@ -149,12 +149,12 @@ export const resume: Resume = {
     {
       institution: "Universidad Católica Ntra. Sra. de la Asunción",
       degree: "Computer Engineering",
-      period: "2019 — present",
+      period: "2019 - present",
     },
     {
       institution: 'Colegio Nacional "Prof. Luciano Bordón"',
       degree: "Computer Technician",
-      period: "2016 — 2018",
+      period: "2016 - 2018",
     },
   ],
   skills: [

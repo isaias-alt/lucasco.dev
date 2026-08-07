@@ -24,7 +24,7 @@ html {
     --steel-dim: #3e5468;
     --line: #23282d;
 
-    /* shadcn remap (migration.md 4.3) — dark-only, no light variant */
+    /* shadcn remap (migration.md 4.3) - dark-only, no light variant */
     --background: 210 12% 6%;
     --foreground: 43 13% 90%;
 
@@ -117,7 +117,7 @@ html {
   @apply rounded-sm;
 }
 
-/* Entry fade (migration.md 7) — single, non-scroll-linked mount animation. */
+/* Entry fade (migration.md 7) - single, non-scroll-linked mount animation. */
 @keyframes fade-in {
   from {
     opacity: 0;
