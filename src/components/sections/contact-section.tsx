@@ -1,13 +1,14 @@
 import { SectionLabel } from "@/components/section-label";
 import { EmailContactLink } from "@/components/email-contact-link";
 import { resume } from "@/data/resume";
+import { renderWithAccentPeriod } from "@/lib/render-with-accent-period";
 
 export function ContactSection() {
   return (
     <section id="contact" className="py-[clamp(48px,8vh,80px)]">
       <SectionLabel index="06" title="Get in Touch" />
       <h3 className="mb-3.5 font-display text-[clamp(28px,5vw,44px)] font-extrabold tracking-[-0.03em] text-bone">
-        {resume.contactHeadline}
+        {renderWithAccentPeriod(resume.contactHeadline)}
       </h3>
       <p className="mb-7 max-w-[48ch] text-base text-fog">
         {resume.contactSub}

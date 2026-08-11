@@ -1,5 +1,6 @@
 import { resume } from "@/data/resume";
 import { renderWithBold } from "@/lib/render-with-bold";
+import { renderWithAccentPeriod } from "@/lib/render-with-accent-period";
 
 export function HeroSection() {
   const headlineLines = resume.headline.split("\n");
@@ -12,7 +13,7 @@ export function HeroSection() {
       <h1 className="mb-6 font-display text-[clamp(40px,8vw,72px)] font-extrabold leading-[0.98] tracking-[-0.04em] text-bone">
         {headlineLines.map((line, i) => (
           <span key={line}>
-            {line}
+            {renderWithAccentPeriod(line)}
             {i < headlineLines.length - 1 && <br />}
           </span>
         ))}
