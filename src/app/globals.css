@@ -2,35 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
+    /* Concrete design tokens (migration.md 4.1 / 4.2) */
+    --bg: #0e1012;
+    --surface: #16191d;
+    --surface-2: #1a1e22;
+    --fog: #8a9099;
+    --bone: #e8e6e1;
+    --steel: #6284a5;
+    --steel-dim: #3e5468;
+    --line: #23282d;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
+    /* shadcn remap (migration.md 4.3) - dark-only, no light variant */
+    --background: 210 12% 6%;
+    --foreground: 43 13% 90%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
+    --card: 214 14% 10%;
+    --card-foreground: 43 13% 90%;
 
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
+    --popover: 210 13% 12%;
+    --popover-foreground: 43 13% 90%;
 
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
+    --primary: 210 27% 52%;
+    --primary-foreground: 210 12% 6%;
 
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
+    --secondary: 210 13% 12%;
+    --secondary-foreground: 43 13% 90%;
 
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
+    --muted: 214 14% 10%;
+    --muted-foreground: 216 7% 57%;
+
+    --accent: 210 13% 12%;
+    --accent-foreground: 43 13% 90%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
+    --border: 210 12% 16%;
+    --input: 210 12% 16%;
+    --ring: 209 25% 33%;
 
     --radius: 0.5rem;
 
@@ -45,34 +66,36 @@
     --chart-5: 27 87% 67%;
   }
 
+  /* Dark-only system: .dark carries the same Concrete values so there is a
+     single palette regardless of the (soon to be removed) theme class. */
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
+    --background: 210 12% 6%;
+    --foreground: 43 13% 90%;
 
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
+    --card: 214 14% 10%;
+    --card-foreground: 43 13% 90%;
 
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 210 13% 12%;
+    --popover-foreground: 43 13% 90%;
 
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
+    --primary: 210 27% 52%;
+    --primary-foreground: 210 12% 6%;
 
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 210 13% 12%;
+    --secondary-foreground: 43 13% 90%;
 
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
+    --muted: 214 14% 10%;
+    --muted-foreground: 216 7% 57%;
 
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 210 13% 12%;
+    --accent-foreground: 43 13% 90%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
+    --border: 210 12% 16%;
+    --input: 210 12% 16%;
+    --ring: 209 25% 33%;
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
@@ -90,61 +113,28 @@
   }
 }
 
-h3 code {
-  @apply !text-lg md:!text-xl;
-}
-
-:not(pre) > code {
-  @apply bg-muted px-1.5 py-0.5 rounded-md  border border-border;
-}
-
-.prose code:not(pre code) {
-  @apply bg-muted px-1.5 py-0.5 rounded-md border border-border;
-  &::before,
-  &::after {
-    display: none;
-  }
-}
-
-pre {
-  @apply !px-0 rounded-lg overflow-x-auto py-4 bg-muted border border-border;
-}
-
-pre > code {
-  @apply grid;
-  counter-reset: line;
-}
-
-pre [data-line] {
-  @apply border-l-2 border-l-transparent px-4;
-}
-
-pre [data-highlighted-line] {
-  @apply border-l-primary bg-primary/10;
-}
-
-code[data-theme*=" "],
-code[data-theme*=" "] span {
-  color: var(--shiki-light);
-  background-color: var(--shiki-light-bg);
-}
-
-.dark {
-  code[data-theme*=" "],
-  code[data-theme*=" "] span {
-    color: var(--shiki-dark);
-    background-color: var(--shiki-dark-bg);
-  }
-}
-
-:not(pre) > code[data-theme*=" "] {
-  @apply bg-muted;
-}
-
-.dark :not(pre) > code[data-theme*=" "] {
-  @apply bg-muted;
-}
-
 .prose img {
-  @apply rounded-sm; /* This adds rounded corners */
+  @apply rounded-sm;
+}
+
+/* Entry fade (migration.md 7) - single, non-scroll-linked mount animation. */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fade-in 400ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    animation: none;
+  }
 }

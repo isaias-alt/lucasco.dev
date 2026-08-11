@@ -1,117 +1,66 @@
-import { Badge } from "@/components/ui/badge";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { cn } from "@/lib/utils";
 import Image from "next/image";
-import Link from "next/link";
-import Markdown from "react-markdown";
-import { memo } from "react";
+import type { Project } from "@/data/resume";
 
-interface Props {
-  title: string;
-  href?: string;
-  description: string;
-  dates: string;
-  tags: readonly string[];
-  link?: string;
-  image?: string;
-  video?: string;
-  links?: readonly {
-    icon: React.ReactNode;
-    type: string;
-    href: string;
-  }[];
-  className?: string;
-}
-
-export const ProjectCard = memo(function ProjectCard({
-  title,
-  href,
-  description,
-  dates,
-  tags,
-  link,
-  image,
-  video,
-  links,
-  className,
-}: Props) {
+export function ProjectCard({ project }: { project: Project }) {
   return (
-    <Card
-      className={
-        "flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full"
-      }
-    >
-      <Link
-        href={href || "#"}
-        className={cn("block cursor-pointer", className)}
-      >
-        {video && (
-          <video
-            src={video}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="pointer-events-none mx-auto h-40 w-full object-cover object-top" // needed because random black line at bottom of video
-          />
-        )}
-        {image && (
+    <article className="grid grid-cols-1 bg-bg sm:grid-cols-[200px_1fr]">
+      {project.image ? (
+        <div className="relative aspect-video overflow-hidden border-b border-line sm:aspect-[16/10] sm:border-b-0 sm:border-r">
           <Image
-            src={image}
-            alt={title}
-            width={500}
-            height={300}
-            className="h-40 w-full overflow-hidden object-cover object-top"
+            src={project.image}
+            alt={`${project.name} screenshot`}
+            fill
+            sizes="(min-width: 640px) 200px, 100vw"
+            className="object-cover"
+            style={{ objectPosition: project.imagePosition ?? "center" }}
           />
-        )}
-      </Link>
-      <CardHeader className="px-2">
-        <div className="space-y-1">
-          <CardTitle className="mt-1 text-base">{title}</CardTitle>
-          <time className="font-sans text-xs">{dates}</time>
-          <div className="hidden font-sans text-xs underline print:visible">
-            {link?.replace("https://", "").replace("www.", "").replace("/", "")}
-          </div>
-          <Markdown className="prose max-w-full text-pretty font-sans text-xs text-muted-foreground dark:prose-invert">
-            {description}
-          </Markdown>
         </div>
-      </CardHeader>
-      <CardContent className="mt-auto flex flex-col px-2">
-        {tags && tags.length > 0 && (
-          <div className="mt-2 flex flex-wrap gap-1">
-            {tags?.map((tag) => (
-              <Badge
-                className="px-1 py-0 text-[10px]"
-                variant="secondary"
-                key={tag}
+      ) : (
+        <div className="flex aspect-video items-center justify-center border-b border-line bg-surface-2 p-2.5 text-center font-mono text-[11px] text-steel-dim sm:aspect-[16/10] sm:border-b-0 sm:border-r">
+          [ SCREENSHOT {project.name} ]
+        </div>
+      )}
+      <div className="flex flex-col px-6 py-[22px]">
+        <div className="mb-1.5 flex items-baseline justify-between gap-2">
+          <span className="font-display text-[21px] font-bold text-bone">
+            {project.name}
+          </span>
+          <span className="whitespace-nowrap font-mono text-[11px] text-fog">
+            {project.year}
+          </span>
+        </div>
+        <div className="mb-2.5 font-mono text-xs text-steel">
+          {project.tag}
+        </div>
+        <p className="max-w-[56ch] flex-1 text-sm leading-[1.6] text-fog">
+          {project.description}
+        </p>
+        <div className="mt-4 flex flex-wrap items-center justify-between gap-2.5">
+          <div className="flex flex-wrap gap-1.5">
+            {project.stack.map((tech) => (
+              <span
+                key={tech}
+                className="rounded-sm border border-line px-2 py-[3px] font-mono text-[10px] text-fog"
               >
-                {tag}
-              </Badge>
+                {tech}
+              </span>
             ))}
           </div>
-        )}
-      </CardContent>
-      <CardFooter className="px-2 pb-2">
-        {links && links.length > 0 && (
-          <div className="flex flex-row flex-wrap items-start gap-1">
-            {links?.map((link, idx) => (
-              <Link href={link?.href} key={idx} target="_blank">
-                <Badge key={idx} className="flex gap-2 px-2 py-1 text-[10px]">
-                  {link.icon}
-                  {link.type}
-                </Badge>
-              </Link>
+          <div className="flex gap-3.5">
+            {project.links.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border-b border-steel-dim pb-0.5 font-mono text-xs text-bone transition-colors duration-150 hover:border-bone"
+              >
+                {link.label}
+              </a>
             ))}
           </div>
-        )}
-      </CardFooter>
-    </Card>
+        </div>
+      </div>
+    </article>
   );
-});
+}
