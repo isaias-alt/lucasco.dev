@@ -1,4 +1,5 @@
 import { SectionLabel } from "@/components/section-label";
+import { EmailContactLink } from "@/components/email-contact-link";
 import { resume } from "@/data/resume";
 
 export function ContactSection() {
@@ -13,13 +14,22 @@ export function ContactSection() {
       </p>
       <div className="grid grid-cols-1 border-t border-line sm:grid-cols-2">
         {resume.contact.map((link) => {
-          const isExternal = link.href.startsWith("http");
+          if (link.href.startsWith("mailto:")) {
+            return (
+              <EmailContactLink
+                key={link.label}
+                email={link.href.replace("mailto:", "")}
+                label={link.label}
+                hint={link.hint}
+              />
+            );
+          }
           return (
             <a
               key={link.label}
               href={link.href}
-              target={isExternal ? "_blank" : undefined}
-              rel={isExternal ? "noopener noreferrer" : undefined}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-between gap-4 border-b border-line py-4 pr-5 font-mono text-sm text-bone transition-colors duration-150 hover:text-steel"
             >
               {link.label}
