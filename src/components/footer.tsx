@@ -16,7 +16,7 @@ export function Footer() {
           rel="noopener noreferrer"
           className={footerLinkClassName}
         >
-          /blog
+          blog
         </a>
       </div>
     </footer>

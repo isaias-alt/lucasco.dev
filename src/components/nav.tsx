@@ -17,12 +17,14 @@ export function Nav() {
         <span className="font-mono text-sm font-medium text-bone">
           {resume.name}
         </span>
-        <div className="hidden gap-5 sm:flex">
-          {NAV_LINKS.map((link) => (
-            <a key={link.href} href={link.href} className={navLinkClassName}>
-              {link.label}
-            </a>
-          ))}
+        <div className="flex items-center gap-5">
+          <div className="hidden gap-5 sm:flex">
+            {NAV_LINKS.map((link) => (
+              <a key={link.href} href={link.href} className={navLinkClassName}>
+                {link.label}
+              </a>
+            ))}
+          </div>
           <a
             href="https://blog.lucasco.dev"
             target="_blank"
