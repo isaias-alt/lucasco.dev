@@ -1,36 +1,39 @@
-import BlurFadeText from "@/components/magicui/blur-fade-text";
-import BlurFade from "@/components/magicui/blur-fade";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { DATA } from "@/data/resume";
-import { BLUR_FADE_DELAY } from "@/lib/constants";
+import { resume } from "@/data/resume";
+import { renderWithBold } from "@/lib/render-with-bold";
 
 export function HeroSection() {
+  const headlineLines = resume.headline.split("\n");
+
   return (
-    <section id="hero">
-      <div className="mx-auto w-full max-w-2xl space-y-8">
-        <div className="gap-2 flex justify-between">
-          <div className="flex-col flex flex-1 space-y-1.5">
-            <BlurFade delay={BLUR_FADE_DELAY}>
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                Hi, I&apos;m{" "}
-                <span className="text-blue-500">{DATA.name.split(" ")[0]}</span>{" "}
-                👋
-              </h1>
-            </BlurFade>
-            <BlurFadeText
-              className="max-w-[600px] md:text-xl"
-              delay={BLUR_FADE_DELAY}
-              text={DATA.description}
-            />
-          </div>
-          <BlurFade delay={BLUR_FADE_DELAY}>
-            <Avatar className="size-28 border">
-              <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
-              <AvatarFallback>{DATA.initials}</AvatarFallback>
-            </Avatar>
-          </BlurFade>
-        </div>
+    <header className="pb-[clamp(48px,8vh,72px)] pt-[clamp(72px,14vh,130px)]">
+      <div className="mb-[18px] font-mono text-sm text-steel">
+        {resume.greeting}
       </div>
-    </section>
+      <h1 className="mb-6 font-display text-[clamp(40px,8vw,72px)] font-extrabold leading-[0.98] tracking-[-0.04em] text-bone">
+        {headlineLines.map((line, i) => (
+          <span key={line}>
+            {line}
+            {i < headlineLines.length - 1 && <br />}
+          </span>
+        ))}
+      </h1>
+      <p className="max-w-[46ch] text-[17px] text-fog">
+        {renderWithBold(resume.summary)}
+      </p>
+      <div className="mt-7 flex flex-wrap gap-5">
+        {resume.meta.map((item) => (
+          <span
+            key={item}
+            className="flex items-center gap-[7px] font-mono text-xs text-fog"
+          >
+            <span
+              aria-hidden="true"
+              className="inline-block h-[5px] w-[5px] rounded-full bg-steel"
+            />
+            {item}
+          </span>
+        ))}
+      </div>
+    </header>
   );
 }
