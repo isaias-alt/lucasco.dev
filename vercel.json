@@ -1,6 +1,16 @@
 {
   "redirects": [
     {
+      "source": "/blog/:slug",
+      "destination": "https://blog.lucasco.dev/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "https://blog.lucasco.dev/",
+      "permanent": true
+    },
+    {
       "source": "/linkedin",
       "destination": "https://www.linkedin.com/in/lucascodev/",
       "permanent": true
@@ -11,11 +21,6 @@
       "permanent": true
     },
     {
-      "source": "/bluesky",
-      "destination": "https://bsky.app/profile/lucascodev.bsky.social",
-      "permanent": true
-    },
-    {
       "source": "/x",
       "destination": "https://x.com/lucascodev",
       "permanent": true
@@ -23,11 +28,6 @@
     {
       "source": "/instagram",
       "destination": "https://www.instagram.com/lucascodev",
-      "permanent": true
-    },
-    {
-      "source": "/fundamentos",
-      "destination": "https://drive.google.com/drive/folders/1CSxQNvluG3PrPboLainSQZxSVqdBHllz?hl=es-419",
       "permanent": true
     }
   ]
