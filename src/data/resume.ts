@@ -61,7 +61,7 @@ export const resume: Resume = {
     {
       role: "Software Developer",
       company: "SODEP S.A.",
-      period: "Nov 2024 - Present",
+      period: "Nov 2024 - Jul 2026",
       intro:
         "Building production software for banking and fintech clients across the stack.",
       projects: [
