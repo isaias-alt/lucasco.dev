@@ -6,7 +6,8 @@ allowBuilds:
   unrs-resolver: true
 overrides:
   js-yaml: '4.3.2'
-  sharp: '0.35.4'
+  sharp: '>=0.35.5'
+  source-map-js: '>=1.2.2'
   minimatch: '>=9.0.7'
   flatted: '>=3.4.2'
   picomatch: '>=4.0.4'
@@ -14,6 +15,7 @@ overrides:
   nanoid: '>=3.3.18'
   ajv: '>=6.14.0'
   yaml: '>=2.8.3'
+  fast-uri: '>=3.1.8'
   '@humanfs/node': '>=0.16.8'
   '@eslint/plugin-kit': '>=0.3.4'
   postcss-selector-parser: '>=6.1.3'
