@@ -89,7 +89,7 @@ const en: Resume = {
   greeting: "Hey, I'm Lucas.",
   headline: "Software engineer.",
   summary:
-    "I work across the stack on **banking and fintech** products in production, and I build and ship my own **SaaS** end to end. From the database to the PDF the user downloads.",
+    "I design and build APIs, integrate existing systems, and develop user interfaces and business workflows for banking and fintech products. I also build and ship my own software products end to end.",
   meta: ["Paraguay / Remote", "5 years"],
   experience: [
     {
@@ -226,7 +226,7 @@ const es: Resume = {
   greeting: "Hola, soy Lucas.",
   headline: "Ingeniero de software.",
   summary:
-    "Trabajo en todo el stack en productos de **banca y fintech** en producción, y construyo y despliego mis propios **SaaS** de punta a punta. Desde la base de datos hasta el PDF que descarga el usuario.",
+    "Diseño e implemento APIs, integro sistemas existentes y desarrollo interfaces de usuario y flujos de negocio para productos de banca y fintech. También construyo y despliego mis propios productos de software de punta a punta.",
   meta: ["Paraguay / Remoto", "5 años"],
   experience: [
     {
