@@ -102,30 +102,16 @@ export const resume: Resume = {
       links: [{ label: "Website", href: "https://nutrione.com.py" }],
     },
     {
-      name: "socratic-duck",
-      year: "2025",
-      tag: "Claude Code skill · published",
+      name: "Vexillum",
+      year: "2026",
+      tag: "Developer tool · AI agent orchestration",
       description:
-        "An agent skill that pressure-tests architectural decisions before you commit to them, through Socratic questioning, and writes a structured decision log.",
-      stack: ["Claude Code", "skills.sh"],
-      image: "/projects/socratic-duck.webp",
+        "A Go CLI that orchestrates coding agents from the terminal: a commander dispatches soldiers into isolated git worktrees, and a sentinel wakes it only when one settles. It powers NutriOne's current iteration.",
+      stack: ["Go", "Claude Code"],
+      image: "/projects/vexillum.webp",
       links: [
-        { label: "Website", href: "https://skills.lucasco.dev" },
-        { label: "Source", href: "https://github.com/isaias-alt/skills" },
-      ],
-    },
-    {
-      name: "Format-X",
-      year: "2025",
-      tag: "Developer tool",
-      description:
-        "Convert between JSON, XML, YAML, CSV and plain text in the browser, with a live editor.",
-      stack: ["Next.js", "Monaco", "TypeScript"],
-      image: "/projects/format-x.webp",
-      imagePosition: "20% center",
-      links: [
-        { label: "Demo", href: "https://format-your-x.vercel.app/" },
-        { label: "Source", href: "https://github.com/isaias-alt/format-x" },
+        { label: "Website", href: "https://vx.lucasco.dev" },
+        { label: "Source", href: "https://github.com/isaias-alt/vexillum" },
       ],
     },
     {
@@ -142,6 +128,20 @@ export const resume: Resume = {
           label: "Source",
           href: "https://github.com/isaias-alt/creacionix-ai",
         },
+      ],
+    },
+    {
+      name: "Format-X",
+      year: "2025",
+      tag: "Developer tool",
+      description:
+        "Convert between JSON, XML, YAML, CSV and plain text in the browser, with a live editor.",
+      stack: ["Next.js", "Monaco", "TypeScript"],
+      image: "/projects/format-x.webp",
+      imagePosition: "20% center",
+      links: [
+        { label: "Demo", href: "https://format-your-x.vercel.app/" },
+        { label: "Source", href: "https://github.com/isaias-alt/format-x" },
       ],
     },
   ],
