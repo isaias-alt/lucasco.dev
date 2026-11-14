@@ -93,7 +93,7 @@ const en: Resume = {
   meta: ["Paraguay / Remote", "5 years"],
   experience: [
     {
-      role: "Software Developer",
+      role: "Software Engineer",
       company: "SODEP S.A.",
       period: "Nov 2024 - Jul 2026",
       intro:
@@ -128,10 +128,10 @@ const en: Resume = {
     {
       name: "NutriOne",
       year: "2024 - present",
-      tag: "Clinical SaaS · built solo, end to end",
+      tag: "Clinical SaaS · co-created, built end to end",
       description:
-        "Patient records, anthropometric tracking, meal-plan builder and PDF export for nutrition professionals. I own every layer: data model, API, interface, deploy.",
-      stack: ["Next.js", "Nest.js", "PostgreSQL", "Prisma"],
+        "Co-created the product and led the backend and frontend of the MVP: patient records, anthropometric tracking, meal-plan builder and PDF export for nutrition professionals.",
+      stack: ["Next.js", "Nest.js", "PostgreSQL", "Redis", "Prisma"],
       image: "/projects/nutrione.webp",
       links: [{ label: "Website", href: "https://nutrione.com.py" }],
     },
@@ -140,7 +140,7 @@ const en: Resume = {
       year: "2026",
       tag: "Developer tool · AI agent orchestration",
       description:
-        "A Go CLI that orchestrates coding agents from the terminal: a commander dispatches soldiers into isolated git worktrees, and a sentinel wakes it only when one settles. It powers NutriOne's current iteration.",
+        "A Go CLI that orchestrates coding agents from the terminal: a commander dispatches soldiers into isolated git worktrees, and a sentinel wakes it only when one settles. I use it to develop NutriOne's current iteration.",
       stack: ["Go", "Claude Code"],
       image: "/projects/vexillum.webp",
       links: [
@@ -151,13 +151,13 @@ const en: Resume = {
     {
       name: "Creacionix AI",
       year: "2024",
-      tag: "Generative AI app",
+      tag: "Generative AI app · open source",
       description:
-        "Content generation from user input, built on the Gemini API.",
-      stack: ["Next.js", "Gemini", "Drizzle"],
+        "Text generation platform with 25+ templates built on the Google Gemini API. Designed, built and deployed solo; open source on GitHub.",
+      stack: ["Next.js", "Gemini", "Clerk", "Drizzle"],
       image: "/projects/creacionix-ai.webp",
       links: [
-        { label: "Demo", href: "https://creacionix-ai.vercel.app/" },
+        { label: "Demo", href: "https://creacionixai.lucasco.dev" },
         {
           label: "Source",
           href: "https://github.com/isaias-alt/creacionix-ai",
@@ -230,7 +230,7 @@ const es: Resume = {
   meta: ["Paraguay / Remoto", "5 años"],
   experience: [
     {
-      role: "Desarrollador de Software",
+      role: "Ingeniero de Software",
       company: "SODEP S.A.",
       period: "Nov 2024 - Jul 2026",
       intro:
@@ -265,10 +265,10 @@ const es: Resume = {
     {
       name: "NutriOne",
       year: "2024 - actualidad",
-      tag: "SaaS clínico · construido solo, de punta a punta",
+      tag: "SaaS clínico · co-creado, desarrollado de punta a punta",
       description:
-        "Historia clínica de pacientes, seguimiento antropométrico, armado de planes nutricionales y exportación a PDF para profesionales de la nutrición. Me hago cargo de cada capa: modelo de datos, API, interfaz y deploy.",
-      stack: ["Next.js", "Nest.js", "PostgreSQL", "Prisma"],
+        "Co-creé el producto y lideré el backend y el frontend del MVP: historia clínica de pacientes, seguimiento antropométrico, armado de planes nutricionales y exportación a PDF para profesionales de la nutrición.",
+      stack: ["Next.js", "Nest.js", "PostgreSQL", "Redis", "Prisma"],
       image: "/projects/nutrione.webp",
       links: [{ label: "Sitio", href: "https://nutrione.com.py" }],
     },
@@ -288,13 +288,13 @@ const es: Resume = {
     {
       name: "Creacionix AI",
       year: "2024",
-      tag: "App de IA generativa",
+      tag: "App de IA generativa · código abierto",
       description:
-        "Generación de contenido a partir del input del usuario, sobre la API de Gemini.",
-      stack: ["Next.js", "Gemini", "Drizzle"],
+        "Plataforma de generación de texto con 25+ plantillas sobre la API de Google Gemini. Diseñada, construida y desplegada en solitario; código abierto en GitHub.",
+      stack: ["Next.js", "Gemini", "Clerk", "Drizzle"],
       image: "/projects/creacionix-ai.webp",
       links: [
-        { label: "Demo", href: "https://creacionix-ai.vercel.app/" },
+        { label: "Sitio", href: "https://creacionixai.lucasco.dev" },
         {
           label: "Código",
           href: "https://github.com/isaias-alt/creacionix-ai",
