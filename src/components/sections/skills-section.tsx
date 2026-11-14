@@ -1,10 +1,15 @@
 import { SectionLabel } from "@/components/section-label";
-import { resume } from "@/data/resume";
+import { getResume } from "@/data/resume";
+import { ui } from "@/data/ui";
+import type { Locale } from "@/lib/i18n";
 
-export function SkillsSection() {
+export function SkillsSection({ locale }: { locale: Locale }) {
+  const resume = getResume(locale);
+  const strings = ui[locale];
+
   return (
     <section id="skills" className="py-[clamp(48px,8vh,80px)]">
-      <SectionLabel index="04" title="Skills" />
+      <SectionLabel index="04" title={strings.sections.skills} />
       <div className="flex flex-wrap gap-2">
         {resume.skills.map((skill) => (
           <span

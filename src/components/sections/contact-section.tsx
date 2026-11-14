@@ -1,12 +1,17 @@
 import { SectionLabel } from "@/components/section-label";
 import { EmailContactLink } from "@/components/email-contact-link";
-import { resume } from "@/data/resume";
+import { getResume } from "@/data/resume";
+import { ui } from "@/data/ui";
+import type { Locale } from "@/lib/i18n";
 import { renderWithAccentPeriod } from "@/lib/render-with-accent-period";
 
-export function ContactSection() {
+export function ContactSection({ locale }: { locale: Locale }) {
+  const resume = getResume(locale);
+  const strings = ui[locale];
+
   return (
     <section id="contact" className="py-[clamp(48px,8vh,80px)]">
-      <SectionLabel index="06" title="Get in Touch" />
+      <SectionLabel index="06" title={strings.sections.contact} />
       <h3 className="mb-3.5 font-display text-[clamp(28px,5vw,44px)] font-extrabold tracking-[-0.03em] text-bone">
         {renderWithAccentPeriod(resume.contactHeadline)}
       </h3>
@@ -22,6 +27,7 @@ export function ContactSection() {
                 email={link.href.replace("mailto:", "")}
                 label={link.label}
                 hint={link.hint}
+                copiedLabel={strings.copied}
               />
             );
           }

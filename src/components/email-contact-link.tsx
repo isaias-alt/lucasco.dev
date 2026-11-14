@@ -10,10 +10,12 @@ export function EmailContactLink({
   email,
   label,
   hint,
+  copiedLabel,
 }: {
   email: string;
   label: string;
   hint: string;
+  copiedLabel: string;
 }) {
   const [copied, setCopied] = useState(false);
 
@@ -27,7 +29,7 @@ export function EmailContactLink({
   return (
     <a href={`mailto:${email}`} onClick={handleClick} className={linkClassName}>
       {label}
-      <span className="text-fog">{copied ? "copied" : hint}</span>
+      <span className="text-fog">{copied ? copiedLabel : hint}</span>
     </a>
   );
 }

@@ -1,9 +1,14 @@
-import { resume } from "@/data/resume";
+import { getResume } from "@/data/resume";
+import { ui } from "@/data/ui";
+import type { Locale } from "@/lib/i18n";
 
 const footerLinkClassName =
   "font-mono text-[11px] text-fog transition-colors duration-150 hover:text-bone";
 
-export function Footer() {
+export function Footer({ locale }: { locale: Locale }) {
+  const resume = getResume(locale);
+  const strings = ui[locale];
+
   return (
     <footer className="border-t border-line px-0 py-6 pb-12">
       <div className="mx-auto flex max-w-[780px] flex-wrap items-center justify-between gap-3 px-6">
@@ -16,7 +21,7 @@ export function Footer() {
           rel="noopener noreferrer"
           className={footerLinkClassName}
         >
-          blog
+          {strings.nav.blog}
         </a>
       </div>
     </footer>
