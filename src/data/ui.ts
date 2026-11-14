@@ -7,8 +7,8 @@ export type UiStrings = {
     about: string;
     contact: string;
     blog: string;
-    cv: string;
   };
+  heroCv: string;
   languageAria: string;
   languageNames: Record<Locale, string>;
   sections: {
@@ -30,8 +30,8 @@ export const ui: Record<Locale, UiStrings> = {
       about: "about",
       contact: "contact",
       blog: "blog",
-      cv: "cv",
     },
+    heroCv: "view cv",
     languageAria: "Language",
     languageNames: { en: "English", es: "Spanish" },
     sections: {
@@ -51,8 +51,8 @@ export const ui: Record<Locale, UiStrings> = {
       about: "sobre mí",
       contact: "contacto",
       blog: "blog",
-      cv: "cv",
     },
+    heroCv: "ver cv",
     languageAria: "Idioma",
     languageNames: { en: "Inglés", es: "Español" },
     sections: {

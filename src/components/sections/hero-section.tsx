@@ -1,11 +1,33 @@
 import { getResume } from "@/data/resume";
 import { ui } from "@/data/ui";
-import type { Locale } from "@/lib/i18n";
+import { cvHref, type Locale } from "@/lib/i18n";
 import { renderWithBold } from "@/lib/render-with-bold";
 import { renderWithAccentPeriod } from "@/lib/render-with-accent-period";
 
+function ArrowUpRight() {
+  return (
+    <svg
+      width="12"
+      height="12"
+      viewBox="0 0 12 12"
+      fill="none"
+      aria-hidden="true"
+      className="shrink-0"
+    >
+      <path
+        d="M3 9L9 3M9 3H4M9 3V8"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export function HeroSection({ locale }: { locale: Locale }) {
   const resume = getResume(locale);
+  const strings = ui[locale];
   const headlineLines = resume.headline.split("\n");
 
   return (
@@ -38,6 +60,15 @@ export function HeroSection({ locale }: { locale: Locale }) {
           </span>
         ))}
       </div>
+      <a
+        href={cvHref(locale)}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-8 inline-flex items-center gap-2 rounded-[3px] border border-line bg-surface px-4 py-2 font-mono text-[13px] text-bone transition-colors duration-150 hover:border-steel"
+      >
+        {strings.heroCv}
+        <ArrowUpRight />
+      </a>
     </header>
   );
 }
