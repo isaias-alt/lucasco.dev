@@ -1,8 +1,11 @@
-import { resume } from "@/data/resume";
+import { getResume } from "@/data/resume";
+import { ui } from "@/data/ui";
+import type { Locale } from "@/lib/i18n";
 import { renderWithBold } from "@/lib/render-with-bold";
 import { renderWithAccentPeriod } from "@/lib/render-with-accent-period";
 
-export function HeroSection() {
+export function HeroSection({ locale }: { locale: Locale }) {
+  const resume = getResume(locale);
   const headlineLines = resume.headline.split("\n");
 
   return (

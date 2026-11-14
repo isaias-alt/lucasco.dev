@@ -1,12 +1,17 @@
 import Image from "next/image";
 import { SectionLabel } from "@/components/section-label";
-import { resume } from "@/data/resume";
+import { getResume } from "@/data/resume";
+import { ui } from "@/data/ui";
+import type { Locale } from "@/lib/i18n";
 import { renderWithBold } from "@/lib/render-with-bold";
 
-export function AboutSection() {
+export function AboutSection({ locale }: { locale: Locale }) {
+  const resume = getResume(locale);
+  const strings = ui[locale];
+
   return (
     <section id="about" className="py-[clamp(48px,8vh,80px)]">
-      <SectionLabel index="05" title="About" />
+      <SectionLabel index="05" title={strings.sections.about} />
       <div className="grid grid-cols-1 items-start gap-5 sm:grid-cols-[130px_1fr] sm:gap-8">
         <div className="relative h-[130px] w-[130px] overflow-hidden rounded-[3px] border border-line bg-surface-2">
           <Image

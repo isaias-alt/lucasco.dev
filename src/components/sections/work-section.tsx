@@ -1,10 +1,15 @@
 import { SectionLabel } from "@/components/section-label";
-import { resume } from "@/data/resume";
+import { getResume } from "@/data/resume";
+import { ui } from "@/data/ui";
+import type { Locale } from "@/lib/i18n";
 
-export function WorkSection() {
+export function WorkSection({ locale }: { locale: Locale }) {
+  const resume = getResume(locale);
+  const strings = ui[locale];
+
   return (
     <section id="experience" className="py-[clamp(48px,8vh,80px)]">
-      <SectionLabel index="01" title="Work Experience" />
+      <SectionLabel index="01" title={strings.sections.experience} />
       {resume.experience.map((job) => (
         <div
           key={job.company}
