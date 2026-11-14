@@ -117,6 +117,17 @@ html {
   @apply rounded-sm;
 }
 
+/* Hero headline. The longest copy ("Ingeniero de software.") is 10.28em wide,
+   so sizing against the container width keeps it on a single line at any
+   viewport, in both languages, without hardcoding a per-locale size. */
+.hero-header {
+  container-type: inline-size;
+}
+
+.hero-title {
+  font-size: clamp(20px, calc(100cqw / 10.6), 69px);
+}
+
 /* Entry fade (migration.md 7) - single, non-scroll-linked mount animation. */
 @keyframes fade-in {
   from {

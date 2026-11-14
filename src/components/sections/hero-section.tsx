@@ -31,11 +31,11 @@ export function HeroSection({ locale }: { locale: Locale }) {
   const headlineLines = resume.headline.split("\n");
 
   return (
-    <header className="pb-[clamp(48px,8vh,72px)] pt-[clamp(72px,14vh,130px)]">
+    <header className="hero-header pb-[clamp(48px,8vh,72px)] pt-[clamp(72px,14vh,130px)]">
       <div className="mb-[18px] font-mono text-sm text-steel">
         {resume.greeting}
       </div>
-      <h1 className="mb-6 font-display text-[clamp(40px,8vw,72px)] font-extrabold leading-[0.98] tracking-[-0.04em] text-bone">
+      <h1 className="hero-title mb-6 font-display font-extrabold leading-[0.98] tracking-[-0.04em] text-bone">
         {headlineLines.map((line, i) => (
           <span key={line}>
             {renderWithAccentPeriod(line)}
@@ -46,7 +46,7 @@ export function HeroSection({ locale }: { locale: Locale }) {
       <p className="max-w-[46ch] text-[17px] text-fog">
         {renderWithBold(resume.summary)}
       </p>
-      <div className="mt-7 flex flex-wrap gap-5">
+      <div className="mt-7 flex flex-wrap items-center gap-5">
         {resume.meta.map((item) => (
           <span
             key={item}
@@ -59,16 +59,16 @@ export function HeroSection({ locale }: { locale: Locale }) {
             {item}
           </span>
         ))}
+        <a
+          href={cvHref(locale)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 font-mono text-xs text-bone underline decoration-steel-dim underline-offset-[3px] transition-colors duration-150 hover:decoration-bone"
+        >
+          {strings.heroCv}
+          <ArrowUpRight />
+        </a>
       </div>
-      <a
-        href={cvHref(locale)}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-8 inline-flex items-center gap-2 rounded-[3px] border border-line bg-surface px-4 py-2 font-mono text-[13px] text-bone transition-colors duration-150 hover:border-steel"
-      >
-        {strings.heroCv}
-        <ArrowUpRight />
-      </a>
     </header>
   );
 }
