@@ -97,17 +97,17 @@ const en: Resume = {
       company: "SODEP S.A.",
       period: "Nov 2024 - Jul 2026",
       intro:
-        "Building production software for banking and fintech clients across the stack.",
+        "Building production software for banking and fintech clients.",
       projects: [
         {
           name: 'Aquí Pago - "Mi Tienda" module',
           description:
-            "Shipped a new Next.js module as a microfrontend inside an existing PHP app, with a shared session between both so users move between them without logging in again. Built stock management and payment collection.",
+            "Built the shared session between a PHP app and a new Next.js microfrontend, integrating with the existing middleware so users move between both without logging in again. Also shipped stock management and payment collection.",
         },
         {
           name: "Banco Basa - Banking CRM",
           description:
-            "Client onboarding, account creation and card issuance. Built a Fastify proxy between the CRM and the bank's APIs that handles authentication and the encryption/decryption layer for requests and responses, and used Redis idempotency keys so critical onboarding flows are safe to retry.",
+            "Added Redis idempotency keys so critical onboarding flows are safe to retry, and built onboarding, account creation and card issuance on top. Designed a Fastify proxy between the CRM and the bank's APIs: authentication and the encryption/decryption layer for every request and response.",
         },
         {
           name: "Banco Interfisa - Business Banking Web",
@@ -121,16 +121,16 @@ const en: Resume = {
       company: "Independent",
       period: "2021 - 2024",
       intro:
-        "Web solutions for clients across different domains, under NDA. React, Next.js and Node.js.",
+        "Web solutions for clients across different domains, under NDA. Integrated payment gateways (Stripe, Bancard, Pagopar) end to end: checkout flows and payment confirmation webhooks, with React, Next.js and Node.js.",
     },
   ],
   projects: [
     {
       name: "NutriOne",
       year: "2024 - present",
-      tag: "Clinical SaaS · co-created, built end to end",
+      tag: "Clinical SaaS · co-created, backend built alone",
       description:
-        "Co-created the product and led the backend and frontend of the MVP: patient records, anthropometric tracking, meal-plan builder and PDF export for nutrition professionals.",
+        "Co-created the product and designed and built the API alone: Nest.js, Prisma and Redis for patient records, anthropometric tracking, meal plans and PDF export. Also built the MVP frontend.",
       stack: ["Next.js", "Nest.js", "PostgreSQL", "Redis", "Prisma"],
       image: "/projects/nutrione.webp",
       links: [{ label: "Website", href: "https://nutrione.com.py" }],
@@ -234,17 +234,17 @@ const es: Resume = {
       company: "SODEP S.A.",
       period: "Nov 2024 - Jul 2026",
       intro:
-        "Desarrollo software en producción para clientes de banca y fintech, en todo el stack.",
+        "Desarrollo software en producción para clientes de banca y fintech.",
       projects: [
         {
           name: 'Aquí Pago - módulo "Mi Tienda"',
           description:
-            "Entregué un módulo nuevo en Next.js como microfrontend dentro de una aplicación PHP existente, con sesión compartida entre ambos para que el usuario pase de uno a otro sin volver a iniciar sesión. También desarrollé la gestión de stock y los cobros.",
+            "Construí la sesión compartida entre una aplicación PHP y un microfrontend nuevo en Next.js, integrándome con el middleware existente para que el usuario pase de uno a otro sin volver a iniciar sesión. También desarrollé la gestión de stock y los cobros.",
         },
         {
           name: "Banco Basa - CRM bancario",
           description:
-            "Alta de clientes, apertura de cuentas y emisión de tarjetas. Construí un proxy en Fastify entre el CRM y las APIs del banco que maneja la autenticación y la capa de cifrado y descifrado de requests y responses, y usé idempotency keys en Redis para que los flujos críticos de alta sean seguros de reintentar.",
+            "Sumé idempotency keys en Redis para que los flujos críticos de alta sean seguros de reintentar, y construí sobre eso el alta de clientes, la apertura de cuentas y la emisión de tarjetas. Diseñé un proxy en Fastify entre el CRM y las APIs del banco: autenticación y la capa de cifrado y descifrado de cada request y response.",
         },
         {
           name: "Banco Interfisa - Banca Empresa Web",
@@ -258,16 +258,16 @@ const es: Resume = {
       company: "Independiente",
       period: "2021 - 2024",
       intro:
-        "Soluciones web para clientes de distintos dominios, bajo NDA. React, Next.js y Node.js.",
+        "Soluciones web para clientes de distintos dominios, bajo NDA. Integré pasarelas de pago (Stripe, Bancard, Pagopar) de punta a punta: flujos de checkout y webhooks de confirmación de pago, con React, Next.js y Node.js.",
     },
   ],
   projects: [
     {
       name: "NutriOne",
       year: "2024 - actualidad",
-      tag: "SaaS clínico · co-creado, desarrollado de punta a punta",
+      tag: "SaaS clínico · co-creado, backend en solitario",
       description:
-        "Co-creé el producto y lideré el backend y el frontend del MVP: historia clínica de pacientes, seguimiento antropométrico, armado de planes nutricionales y exportación a PDF para profesionales de la nutrición.",
+        "Co-creé el producto y diseñé y construí la API en solitario: Nest.js, Prisma y Redis para historia clínica, seguimiento antropométrico, planes nutricionales y exportación a PDF. También desarrollé el frontend del MVP.",
       stack: ["Next.js", "Nest.js", "PostgreSQL", "Redis", "Prisma"],
       image: "/projects/nutrione.webp",
       links: [{ label: "Sitio", href: "https://nutrione.com.py" }],
